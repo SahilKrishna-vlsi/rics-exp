@@ -6,7 +6,7 @@ This repository contains the system verilog implementation of RISC-V.
 
 SystemVerilog implementation of a single-cycle RISC-V (RV32I) control unit, verified using waveform-based simulation.
 
-    **Features**
+**Features**
 
         Full RV32I instruction decode
 
@@ -22,7 +22,7 @@ SystemVerilog implementation of a single-cycle RISC-V (RV32I) control unit, veri
 
         Verified with Verilator + GTKWave
 
-    **Supported Instructions**
+**Supported Instructions**
 
         R-Type: ADD, SUB, AND, OR, XOR, SLT, SLTU, shifts
 
@@ -34,7 +34,7 @@ SystemVerilog implementation of a single-cycle RISC-V (RV32I) control unit, veri
 
         Jump: JAL, JALR
 
-    **Control Signals Generated**
+**Control Signals Generated**
 
         ALU operation select
 
