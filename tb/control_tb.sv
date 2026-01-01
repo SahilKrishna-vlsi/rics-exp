@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_control_unit;
+module control_tb();
 
   // Inputs
   logic [31:0] inst;
@@ -9,7 +9,7 @@ module tb_control_unit;
   logic        flag_lt;
 
   // Outputs
-  operator     alu_op_select;
+  operator_t     alu_op_select;
   logic        alu_scr_sel_1;
   logic        alu_scr_sel_2;
   logic        reg_write;
@@ -20,17 +20,17 @@ module tb_control_unit;
 
   // DUT
   control_unit dut (
-    .inst(inst),
+    .instruction(inst),
     .zeros(zeros),
     .flag_ltu(flag_ltu),
     .flag_lt(flag_lt),
-    .alu_op_select(alu_op_select),
-    .alu_scr_sel_1(alu_scr_sel_1),
-    .alu_scr_sel_2(alu_scr_sel_2),
+    .opcode(alu_op_select),
+    .alu_input_1(alu_scr_sel_1),
+    .alu_input_2(alu_scr_sel_2),
     .reg_write(reg_write),
     .mem_read(mem_read),
     .mem_write(mem_write),
-    .PC_select(PC_select),
+    .pc_select(PC_select),
     .write_from(write_from)
   );
 
@@ -38,17 +38,23 @@ module tb_control_unit;
   task apply_inst(input [31:0] i);
     begin
       inst = i;
-      #1;
+      #10;
+      $display("instruction = %h ,ALU_opcode = %s ,reg_writ e= %b ,mem_read = %b ,mem_write = %b ,PC_select = %b ,write_from = %b ",inst,alu_op_select.name(),reg_write,mem_read,mem_write,PC_select,write_from);
     end
   endtask
+  
 
   initial begin
+    #0;
+    $dumpfile("sim/control_wave.vcd");
+    $dumpvars(0, control_tb);
     // defaults
     inst     = 32'b0;
     zeros    = 0;
     flag_lt  = 0;
     flag_ltu = 0;
 
+  
     // ----------------------------
     // R-TYPE: ADD
     // opcode=0110011, funct3=000, funct7=0000000
@@ -76,7 +82,7 @@ module tb_control_unit;
     // STORE
     // opcode=0100011
     // ----------------------------
-    apply_inst({7'd1, 5'd2, 5'd1, 3'b010, 5'd3, 7'b0100011});
+    apply_inst({7'b0000000, 5'd2, 5'd1, 3'b010, 5'b01000, 7'b0100011});
 
     // ----------------------------
     // BRANCH: BEQ (taken)
@@ -89,12 +95,16 @@ module tb_control_unit;
     // BRANCH: BLT (taken)
     // ----------------------------
     flag_lt = 1;
+    zeros = 0;
     apply_inst({7'd1, 5'd2, 5'd1, 3'b100, 5'd3, 7'b1100011});
 
     // ----------------------------
     // JAL
     // opcode=1101111
     // ----------------------------
+    zeros    = 0;
+    flag_lt  = 0;
+    flag_ltu = 0;
     apply_inst({20'd0, 5'd1, 7'b1101111});
 
     // ----------------------------
@@ -106,5 +116,13 @@ module tb_control_unit;
     #10;
     $finish;
   end
+
+  /** 
+    Use Verilator & gtkwave to view the wave form 
+    run following commands to excute the code.
+    -> verilator -Wall --Wno-fatal --trace --binary rtl/control_unit.sv tb/control_tb.sv
+    -> ./obj_dir/Vcontrol_unit 
+    -> gtkwave sim/control_wave.vcd
+  */
 
 endmodule
