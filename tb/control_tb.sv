@@ -1,37 +1,37 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
 
-module control_tb();
+module control_tb ();
 
   // Inputs
-  logic [31:0] inst;
-  logic        zeros;
-  logic        flag_ltu;
-  logic        flag_lt;
+  logic      [31:0] inst;
+  logic             zeros;
+  logic             flag_ltu;
+  logic             flag_lt;
 
   // Outputs
-  operator_t     alu_op_select;
-  logic        alu_scr_sel_1;
-  logic        alu_scr_sel_2;
-  logic        reg_write;
-  logic        mem_read;
-  logic        mem_write;
-  logic [1:0]  PC_select;
-  logic [1:0]  write_from;
+  operator_t        alu_op_select;
+  logic             alu_scr_sel_1;
+  logic             alu_scr_sel_2;
+  logic             reg_write;
+  logic             mem_read;
+  logic             mem_write;
+  logic      [ 1:0] PC_select;
+  logic      [ 1:0] write_from;
 
   // DUT
   control_unit dut (
-    .instruction(inst),
-    .zeros(zeros),
-    .flag_ltu(flag_ltu),
-    .flag_lt(flag_lt),
-    .opcode(alu_op_select),
-    .alu_input_1(alu_scr_sel_1),
-    .alu_input_2(alu_scr_sel_2),
-    .reg_write(reg_write),
-    .mem_read(mem_read),
-    .mem_write(mem_write),
-    .pc_select(PC_select),
-    .write_from(write_from)
+      .instruction(inst),
+      .zeros(zeros),
+      .flag_ltu(flag_ltu),
+      .flag_lt(flag_lt),
+      .opcode(alu_op_select),
+      .alu_input_1(alu_scr_sel_1),
+      .alu_input_2(alu_scr_sel_2),
+      .reg_write(reg_write),
+      .mem_read(mem_read),
+      .mem_write(mem_write),
+      .pc_select(PC_select),
+      .write_from(write_from)
   );
 
   // Task to apply instruction
@@ -39,10 +39,12 @@ module control_tb();
     begin
       inst = i;
       #10;
-      $display("instruction = %h ,ALU_opcode = %s ,reg_writ e= %b ,mem_read = %b ,mem_write = %b ,PC_select = %b ,write_from = %b ",inst,alu_op_select.name(),reg_write,mem_read,mem_write,PC_select,write_from);
+      $display(
+          "instruction = %h ,ALU_opcode = %s ,reg_writ e= %b ,mem_read = %b ,mem_write = %b ,PC_select = %b ,write_from = %b ",
+          inst, alu_op_select.name(), reg_write, mem_read, mem_write, PC_select, write_from);
     end
   endtask
-  
+
 
   initial begin
     #0;
@@ -54,7 +56,7 @@ module control_tb();
     flag_lt  = 0;
     flag_ltu = 0;
 
-  
+
     // ----------------------------
     // R-TYPE: ADD
     // opcode=0110011, funct3=000, funct7=0000000
@@ -95,7 +97,7 @@ module control_tb();
     // BRANCH: BLT (taken)
     // ----------------------------
     flag_lt = 1;
-    zeros = 0;
+    zeros   = 0;
     apply_inst({7'd1, 5'd2, 5'd1, 3'b100, 5'd3, 7'b1100011});
 
     // ----------------------------
@@ -121,8 +123,8 @@ module control_tb();
     Use Verilator & gtkwave to view the wave form 
     run following commands to excute the code.
     -> verilator -Wall --Wno-fatal --trace --binary rtl/control_unit.sv tb/control_tb.sv
-    -> ./obj_dir/Vcontrol_unit 
-    -> gtkwave sim/control_wave.vcd
+     ./obj_dir/Vcontrol_unit 
+     gtkwave sim/control_wave.vcd
   */
 
 endmodule
