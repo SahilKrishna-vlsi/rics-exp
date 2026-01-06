@@ -1,8 +1,21 @@
 `timescale 1ns / 1ps
 typedef enum logic [4:0] {
-  ADD,  SUB,  AND,  OR,  XOR,
-  SLL,  SRL,  SRA,  SLT,  SLTU,
-  EQ,  NE,  LT,  GE,  LTU,  GEU
+  ADD,
+  SUB,
+  AND,
+  OR,
+  XOR,
+  SLL,
+  SRL,
+  SRA,
+  SLT,
+  SLTU,
+  EQ,
+  NE,
+  LT,
+  GE,
+  LTU,
+  GEU
 } operator_t;
 
 /***
@@ -54,8 +67,8 @@ module alu_io_selections (
 
       7'b0010011: begin
         alu_opcode = ADD;
-		alu_io_1 = 1'b1;
-		alu_io_2 = 1'b0;
+        alu_io_1   = 1'b1;
+        alu_io_2   = 1'b0;
 
       end
 
@@ -67,8 +80,8 @@ module alu_io_selections (
 
       7'b0100011: begin
         alu_opcode = ADD;
-		alu_io_1 = 1'b1;
-		alu_io_2 = 1'b0;
+        alu_io_1   = 1'b1;
+        alu_io_2   = 1'b0;
 
       end
 
@@ -216,8 +229,11 @@ module control_unit (
 		The upcoming the func3 12-14 and func7 25-31 tells about the operation that should be performed by ALU .
 	**/
   alu_io_selections alu_io (
-      .inst(instruction), .alu_opcode(opcode), .alu_io_1(alu_input_1), .alu_io_2(alu_input_2)
-  ); 
+      .inst(instruction),
+      .alu_opcode(opcode),
+      .alu_io_1(alu_input_1),
+      .alu_io_2(alu_input_2)
+  );
   datapath data_path (
       .inst(instruction),
       .zero_flag(zeros),
