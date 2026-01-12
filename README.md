@@ -15,45 +15,45 @@ This core is intended as a baseline architectural reference and a foundation for
 # Supported Instruction Set (RV32I)
 **R-Type**
 
-ADD, SUB
+  ADD, SUB
+  
+  AND, OR, XOR
+  
+  SLT, SLTU
+  
+  Shift operations
 
-AND, OR, XOR
+**I-Type**
 
-SLT, SLTU
+  ADDI, ANDI, ORI
+  
+  Shift immediates
 
-Shift operations
+  JALR
 
-I-Type
+**Load / Store
+**
+  LW
+  
+  SW
 
-ADDI, ANDI, ORI
+**Branch**
 
-Shift immediates
+  BEQ, BNE
+  
+  BLT, BGE
+  
+  BLTU, BGEU
 
-JALR
+**Jump**
 
-Load / Store
-
-LW
-
-SW
-
-Branch
-
-BEQ, BNE
-
-BLT, BGE
-
-BLTU, BGEU
-
-Jump
-
-JAL
-
-JALR
+  JAL
+  
+  JALR
 
 All instructions execute in one clock cycle, with architectural state updated on the clock edge.
 
-**Verification Status**
+# Verification Status
 
 Verified using Verilator for cycle-accurate simulation
 
@@ -61,19 +61,19 @@ Functional correctness validated using GTKWave
 
 Instruction execution confirmed via waveform inspection:
 
-PC sequencing
-
-Register updates
-
-Memory behavior
-
-Branch and jump control flow
+  PC sequencing
+  
+  Register updates
+  
+  Memory behavior
+  
+  Branch and jump control flow
 
 This project is functionally complete as a single-cycle RV32I core.
 
 ![alt text](image.png)
 
-**Next Steps**
+# Next Steps
 
 This repository represents a completed single-cycle implementation.
 
