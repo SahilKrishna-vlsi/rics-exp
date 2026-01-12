@@ -1,51 +1,91 @@
 # RISC-V SINGLE-CYCLE
 
-This repository contains the system verilog implementation of RISC-V.
+This repository contains a RTL implementation of a single-cycle RISC-V RV32I processor core, designed and verified at the architectural level.
 
-# RV32I Control Unit (SystemVerilog)
+The project focuses on correct instruction semantics, clean datapath/control separation, and deterministic single-cycle execution.
 
-SystemVerilog implementation of a single-cycle RISC-V (RV32I) control unit, verified using waveform-based simulation.
+# Overview
+**ISA**: RISC-V RV32I
+**Microarchitecture**: Single-cycle
+**Language**: SystemVerilog
+**Verification**: Verilator + GTKWave
+**Execution model**: One instruction completed per clock cycle
+This core is intended as a baseline architectural reference and a foundation for future extensions (multi-cycle, pipelined, MMU/Linux-capable designs).
 
-**Features**
+# Supported Instruction Set (RV32I)
+**R-Type**
 
-        Full RV32I instruction decode
+    ADD, SUB
+    
+    AND, OR, XOR
+    
+    SLT, SLTU
+    
+    Shift operations
 
-        Clean separation of:
+**I-Type**
 
-        ALU operation decoding
+    ADDI, ANDI, ORI
+    
+    Shift immediates
+  
+    JALR
 
-        Datapath control (PC, memory, register writeback)
+**Load / Store**
 
-        Semantic ALU control using enums
+    LW
+    
+    SW
 
-        Purely combinational control logic (no latches)
+**Branch**
 
-        Verified with Verilator + GTKWave
+    BEQ, BNE
+    
+    BLT, BGE
+    
+    BLTU, BGEU
 
-**Supported Instructions**
+**Jump**
 
-        R-Type: ADD, SUB, AND, OR, XOR, SLT, SLTU, shifts
+    JAL
+    
+    JALR
 
-        I-Type: ADDI, ANDI, ORI, shifts
+All instructions execute in one clock cycle, with architectural state updated on the clock edge.
 
-        Load / Store: LW, SW
+# Verification Status
 
-        Branch: BEQ, BNE, BLT, BGE, BLTU, BGEU
+Verified using Verilator for cycle-accurate simulation
 
-        Jump: JAL, JALR
+Functional correctness validated using GTKWave
 
-**Control Signals Generated**
+Instruction execution confirmed via waveform inspection:
 
-        ALU operation select
+  PC sequencing
+  
+  Register updates
+  
+  Memory behavior
+  
+  Branch and jump control flow
 
-        ALU input mux selects (PC / reg / immediate)
+This project is functionally complete as a single-cycle RV32I core.
 
-        Register write enable
+![alt text](image.png)
 
-        Memory read/write enable
+# Next Steps
 
-        PC control (PC+4, PC+offset, rs1+offset)
+This repository represents a completed single-cycle implementation.
 
-        Writeback source select (ALU / memory / PC)
+Future work will proceed by forking this design to implement:
 
-will continue working on this to build a complete single-cycle RISC-v
+Multi-cycle execution
+
+Pipelining
+
+Hazard handling
+
+Memory management (MMU)
+
+This core serves as the architectural and RTL foundation for those extensions.
+
