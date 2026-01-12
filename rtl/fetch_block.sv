@@ -38,17 +38,19 @@ module fetch_block (
     input  logic [31:0] offset,
     input  logic [31:0] reg_val,
     input  logic [ 1:0] PC_select,
+    output logic [31:0] pc_4,
     output logic [31:0] pc
 );
   logic [31:0] pc__4;
   assign pc__4 = pc + 32'd4;
+  assign pc_4  = pc__4;
   logic [31:0] pc_imm;
   assign pc_imm = pc + offset;
   logic [31:0] pc_reg1;
-  assign pc_reg1 = offset + reg_val;
+  assign pc_reg1 = (offset + reg_val) & 32'b1111_1111_1111_1111_1111_1111_1111_1110;
   logic [31:0] pc_value;
 
-  mux41_pc mux_pc (
+  mux41_pc mux (
       .i1(pc__4),
       .i2(pc_imm),
       .i3(pc_reg1),
