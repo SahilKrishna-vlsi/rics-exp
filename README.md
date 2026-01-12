@@ -1,51 +1,91 @@
 # RISC-V SINGLE-CYCLE
 
-This repository contains the system verilog implementation of RISC-V.
+This repository contains a RTL implementation of a single-cycle RISC-V RV32I processor core, designed and verified at the architectural level.
 
-# RV32I Control Unit (SystemVerilog)
+The project focuses on correct instruction semantics, clean datapath/control separation, and deterministic single-cycle execution.
 
-SystemVerilog implementation of a single-cycle RISC-V (RV32I) control unit, verified using waveform-based simulation.
+# Overview
+**ISA**: RISC-V RV32I
+**Microarchitecture**: Single-cycle
+**Language**: SystemVerilog
+**Verification**: Verilator + GTKWave
+**Execution model**: One instruction completed per clock cycle
+This core is intended as a baseline architectural reference and a foundation for future extensions (multi-cycle, pipelined, MMU/Linux-capable designs).
 
-**Features**
+# Supported Instruction Set (RV32I)
+**R-Type**
 
-        Full RV32I instruction decode
+ADD, SUB
 
-        Clean separation of:
+AND, OR, XOR
 
-        ALU operation decoding
+SLT, SLTU
 
-        Datapath control (PC, memory, register writeback)
+Shift operations
 
-        Semantic ALU control using enums
+I-Type
 
-        Purely combinational control logic (no latches)
+ADDI, ANDI, ORI
 
-        Verified with Verilator + GTKWave
+Shift immediates
 
-**Supported Instructions**
+JALR
 
-        R-Type: ADD, SUB, AND, OR, XOR, SLT, SLTU, shifts
+Load / Store
 
-        I-Type: ADDI, ANDI, ORI, shifts
+LW
 
-        Load / Store: LW, SW
+SW
 
-        Branch: BEQ, BNE, BLT, BGE, BLTU, BGEU
+Branch
 
-        Jump: JAL, JALR
+BEQ, BNE
 
-**Control Signals Generated**
+BLT, BGE
 
-        ALU operation select
+BLTU, BGEU
 
-        ALU input mux selects (PC / reg / immediate)
+Jump
 
-        Register write enable
+JAL
 
-        Memory read/write enable
+JALR
 
-        PC control (PC+4, PC+offset, rs1+offset)
+All instructions execute in one clock cycle, with architectural state updated on the clock edge.
 
-        Writeback source select (ALU / memory / PC)
+**Verification Status**
 
-will continue working on this to build a complete single-cycle RISC-v
+Verified using Verilator for cycle-accurate simulation
+
+Functional correctness validated using GTKWave
+
+Instruction execution confirmed via waveform inspection:
+
+PC sequencing
+
+Register updates
+
+Memory behavior
+
+Branch and jump control flow
+
+This project is functionally complete as a single-cycle RV32I core.
+
+![alt text](image.png)
+
+**Next Steps**
+
+This repository represents a completed single-cycle implementation.
+
+Future work will proceed by forking this design to implement:
+
+Multi-cycle execution
+
+Pipelining
+
+Hazard handling
+
+Memory management (MMU)
+
+This core serves as the architectural and RTL foundation for those extensions.
+
