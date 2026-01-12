@@ -15,41 +15,41 @@ This core is intended as a baseline architectural reference and a foundation for
 # Supported Instruction Set (RV32I)
 **R-Type**
 
-  ADD, SUB
-  
-  AND, OR, XOR
-  
-  SLT, SLTU
-  
-  Shift operations
+    ADD, SUB
+    
+    AND, OR, XOR
+    
+    SLT, SLTU
+    
+    Shift operations
 
 **I-Type**
 
-  ADDI, ANDI, ORI
+    ADDI, ANDI, ORI
+    
+    Shift immediates
   
-  Shift immediates
+    JALR
 
-  JALR
+**Load / Store**
 
-**Load / Store
-**
-  LW
-  
-  SW
+    LW
+    
+    SW
 
 **Branch**
 
-  BEQ, BNE
-  
-  BLT, BGE
-  
-  BLTU, BGEU
+    BEQ, BNE
+    
+    BLT, BGE
+    
+    BLTU, BGEU
 
 **Jump**
 
-  JAL
-  
-  JALR
+    JAL
+    
+    JALR
 
 All instructions execute in one clock cycle, with architectural state updated on the clock edge.
 
