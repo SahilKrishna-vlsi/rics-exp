@@ -26,12 +26,13 @@ foundation for future pipelined/multi-cycle extensions.
 | Jump       | JAL, JALR                                   |
 
 ## Repository Structure
-rics-exp/
+```bash
+rics-exp
 ├── rtl/       # Synthesizable SystemVerilog source files
 ├── tb/        # Testbench files
 ├── sw/        # Software test programs
 └── image.png  # Waveform output
-
+```
 
 ## How to Run
 
