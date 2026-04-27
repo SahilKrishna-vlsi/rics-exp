@@ -1,91 +1,73 @@
-# RISC-V SINGLE-CYCLE
+# RISC-V Single-Cycle Processor (RV32I)
 
-This repository contains a RTL implementation of a single-cycle RISC-V RV32I processor core, designed and verified at the architectural level.
+A complete RTL implementation of a single-cycle RISC-V RV32I processor core,
+designed and verified using SystemVerilog.
 
-The project focuses on correct instruction semantics, clean datapath/control separation, and deterministic single-cycle execution.
+![Language](https://img.shields.io/badge/Language-SystemVerilog-blue)
+![ISA](https://img.shields.io/badge/ISA-RISC--V%20RV32I-green)
+![Simulator](https://img.shields.io/badge/Simulator-Verilator-orange)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-# Overview
-**ISA**: RISC-V RV32I
-**Microarchitecture**: Single-cycle
-**Language**: SystemVerilog
-**Verification**: Verilator + GTKWave
-**Execution model**: One instruction completed per clock cycle
-This core is intended as a baseline architectural reference and a foundation for future extensions (multi-cycle, pipelined, MMU/Linux-capable designs).
+## Overview
 
-# Supported Instruction Set (RV32I)
-**R-Type**
+This project implements a single-cycle RV32I core with clean datapath/control
+separation. Every instruction completes in one clock cycle, with architectural
+state updated on the rising clock edge. It serves as a baseline reference and
+foundation for future pipelined/multi-cycle extensions.
 
-    ADD, SUB
-    
-    AND, OR, XOR
-    
-    SLT, SLTU
-    
-    Shift operations
+## Supported Instructions
 
-**I-Type**
+| Type       | Instructions                                |
+|------------|---------------------------------------------|
+| R-Type     | ADD, SUB, AND, OR, XOR, SLT, SLTU, shifts   |
+| I-Type     | ADDI, ANDI, ORI, shift immediates, JALR     |
+| Load/Store | LW, SW                                      |
+| Branch     | BEQ, BNE, BLT, BGE, BLTU, BGEU              |
+| Jump       | JAL, JALR                                   |
 
-    ADDI, ANDI, ORI
-    
-    Shift immediates
-  
-    JALR
+## Repository Structure
+rics-exp/
+├── rtl/       # Synthesizable SystemVerilog source files
+├── tb/        # Testbench files
+├── sw/        # Software test programs
+└── image.png  # Waveform output
 
-**Load / Store**
 
-    LW
-    
-    SW
+## How to Run
 
-**Branch**
+**Requirements:** Verilator, GTKWave
 
-    BEQ, BNE
-    
-    BLT, BGE
-    
-    BLTU, BGEU
+```bash
+# Clone the repo
+git clone https://github.com/SahilKrishna-vlsi/rics-exp.git
+cd rics-exp
 
-**Jump**
+# Compile with Verilator
+verilator --cc --exe --build rtl/*.sv tb/*.sv
 
-    JAL
-    
-    JALR
+# View waveforms
+gtkwave dump.vcd
+```
 
-All instructions execute in one clock cycle, with architectural state updated on the clock edge.
+## Verification
 
-# Verification Status
+- Cycle-accurate simulation using Verilator
+- Waveform inspection via GTKWave
+- Validated: PC sequencing, register file updates, memory reads/writes,
+  branch and jump control flow
 
-Verified using Verilator for cycle-accurate simulation
+## Waveform Output
 
-Functional correctness validated using GTKWave
+![Waveform](image.png)
 
-Instruction execution confirmed via waveform inspection:
+## Future Work
 
-  PC sequencing
-  
-  Register updates
-  
-  Memory behavior
-  
-  Branch and jump control flow
+- Multi-cycle execution
+- 5-stage pipeline with hazard handling
+- MMU support for Linux capability
 
-This project is functionally complete as a single-cycle RV32I core.
+## Author
 
-![alt text](image.png)
-
-# Next Steps
-
-This repository represents a completed single-cycle implementation.
-
-Future work will proceed by forking this design to implement:
-
-Multi-cycle execution
-
-Pipelining
-
-Hazard handling
-
-Memory management (MMU)
-
-This core serves as the architectural and RTL foundation for those extensions.
+**Sahil Krishna** | [LinkedIn](https://www.linkedin.com/in/sahilkrishna/) |
+[GitHub](https://github.com/SahilKrishna-vlsi)
 
