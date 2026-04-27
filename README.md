@@ -65,6 +65,7 @@ gtkwave dump.vcd
 - Multi-cycle execution
 - 5-stage pipeline with hazard handling
 - MMU support for Linux capability
+- Working UVM Testbench
 
 ## Author
 
