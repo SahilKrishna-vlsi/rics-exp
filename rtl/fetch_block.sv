@@ -41,9 +41,9 @@ module fetch_block (
     output logic [31:0] pc_4,
     output logic [31:0] pc
 );
-  logic [31:0] pc__4;
-  assign pc__4 = pc + 32'd4;
-  assign pc_4  = pc__4;
+  logic [31:0] pc_plus4;
+  assign pc_plus4 = pc + 32'd4;
+  assign pc_4  = pc_plus4;
   logic [31:0] pc_imm;
   assign pc_imm = pc + offset;
   logic [31:0] pc_reg1;
@@ -51,7 +51,7 @@ module fetch_block (
   logic [31:0] pc_value;
 
   mux41_pc mux (
-      .i1(pc__4),
+      .i1(pc_plus4),
       .i2(pc_imm),
       .i3(pc_reg1),
       .PC_select(PC_select),
