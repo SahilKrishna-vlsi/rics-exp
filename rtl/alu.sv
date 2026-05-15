@@ -83,7 +83,7 @@ module alu (
         lt = 1'b0;
       end
       NE: begin  //not equals
-        zeros = (A != B) ? 1'b1 : 1'b0;
+        zeros = (A != B) ? 1'b0 : 1'b1;
         result = 32'b0;
         ltu = 1'b0;
         lt = 1'b0;
@@ -95,7 +95,7 @@ module alu (
         result = 32'b0;
       end
       GE: begin  //greater than equals signed
-        lt = ~($signed(A) < $signed(B));
+        lt = ($signed(A) >= $signed(B)) ? 1'b0 : 1'b1;
         zeros = 1'b0;
         ltu = 1'b0;
         result = 32'b0;
@@ -107,7 +107,7 @@ module alu (
         result = 32'b0;
       end
       GEU: begin  //greater than equals unsigned
-        ltu = (A > B || A == B) ? 1'b1 : 1'b0;
+        ltu = (A > B || A == B) ? 1'b0 : 1'b1;
         zeros = 1'b0;
         result = 32'b0;
         lt = 1'b0;

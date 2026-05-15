@@ -14,6 +14,8 @@ class risc_pkt extends uvm_sequence_item;
 
   // For Immediate/Store type instruction
   rand logic [11:0] i_imm;
+  // For branch type instruction
+  rand logic [12:0] b_imm;
 
   // For Unconditional jump/ Jump type instruction
   rand logic [20:0] u_imm;
@@ -27,8 +29,17 @@ class risc_pkt extends uvm_sequence_item;
 	7'b1101111 => 	Jump type JAL
 	7'b1100111 => 	JUmp type JALR
 	**/
-  constraint c_opcode {opcode inside {7'h33, 7'h13, 7'h3, 7'h23};}
   constraint c_i_mm {i_imm < 100;}
+  constraint c_b_mm {
+    b_imm < 40;
+    b_imm % 4 == 0;
+    b_imm != 32'b0;
+  }
+  constraint c_func3 {
+    if (opcode == 7'h63) {
+      func3 inside {3'b0, 3'b1, 3'b100, 3'b101, 3'b110, 3'b111};
+    }
+  }
 
   `uvm_object_utils_begin(risc_pkt)
     `uvm_field_int(opcode, UVM_ALL_ON)
@@ -39,6 +50,7 @@ class risc_pkt extends uvm_sequence_item;
     `uvm_field_int(func7, UVM_ALL_ON)
     `uvm_field_int(i_imm, UVM_ALL_ON)
     `uvm_field_int(u_imm, UVM_ALL_ON)
+    `uvm_field_int(b_imm, UVM_ALL_ON)
   `uvm_object_utils_end
 
 
@@ -62,6 +74,7 @@ class data_pkt extends uvm_sequence_item;
   logic reg_write, mem_read, mem_write, alu_select_1, alu_select_2;
   logic [1:0] pc_select, write_from;
   logic [31:0] write_data, mem_data;
+  logic reset;
   operator_t alu_opcode;
 
   `uvm_object_utils_begin(data_pkt)
@@ -85,6 +98,7 @@ class data_pkt extends uvm_sequence_item;
     `uvm_field_int(write_from, UVM_ALL_ON)
     `uvm_field_int(write_data, UVM_ALL_ON)
     `uvm_field_int(mem_data, UVM_ALL_ON)
+    `uvm_field_int(reset, UVM_ALL_ON)
     `uvm_field_enum(operator_t, alu_opcode, UVM_ALL_ON)
   `uvm_object_utils_end
 

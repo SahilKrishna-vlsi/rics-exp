@@ -1,9 +1,9 @@
-[2026-05-14 12:08:46 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-access' '+rw' -uvmnocdnsextra -uvmhome $UVM_HOME $UVM_HOME/src/uvm_macros.svh design.sv testbench.sv  
-TOOL:	xrun	25.03-s001: Started on May 14, 2026 at 08:08:47 EDT
+[2026-05-15 17:58:18 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-access' '+rw' -uvmnocdnsextra -uvmhome $UVM_HOME $UVM_HOME/src/uvm_macros.svh design.sv testbench.sv  
+TOOL:	xrun	25.03-s001: Started on May 15, 2026 at 13:58:19 EDT
 xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
       pkt.randomize () ; // {opcode inside {7'h3,7'h13,7'h23,7'h33};}
                   |
-xmvlog: *W,FUNTSK (testbench.sv,126|18): function called as a task without void'().
+xmvlog: *W,FUNTSK (testbench.sv,138|18): function called as a task without void'().
 	Top level design units:
 		isa_types_pkg
 		uvm_pkg
@@ -37,126 +37,108 @@ CDNS-UVM-1.2 (25.03-s001)
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 UVM_INFO @ 0: reporter [RNTST] Running test risc_test...
-UVM_INFO testbench.sv(430) @ 6: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 16: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 26: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 36: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 46: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 56: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 66: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 76: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 86: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 96: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 106: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 116: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 126: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 136: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 146: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 156: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 166: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 176: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 186: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 196: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 206: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 216: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 226: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 236: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 246: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 256: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 266: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 276: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 286: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 296: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 306: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 316: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 326: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 336: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 346: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 356: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 366: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 376: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 386: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 396: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 406: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 416: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 426: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 436: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 446: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 456: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 466: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 476: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 486: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 496: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 506: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 516: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 526: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 536: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 546: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 556: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 566: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 576: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 586: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 596: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 606: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 616: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 626: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 636: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 646: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 656: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 666: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 676: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 686: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 696: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 706: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 716: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 726: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 736: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 746: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 756: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 766: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 776: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 786: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 796: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 806: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 816: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 826: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 836: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 846: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 856: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 866: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 876: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 886: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 896: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 906: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 916: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 926: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 936: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 946: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(430) @ 956: uvm_test_top.env.scr [SB_PASS] L-Type Intsruction passed
-UVM_INFO testbench.sv(371) @ 966: uvm_test_top.env.scr [SB_PASS] R-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 976: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
-UVM_INFO testbench.sv(454) @ 986: uvm_test_top.env.scr [SB_PASS] S-Type Intsruction passed
-UVM_INFO testbench.sv(409) @ 996: uvm_test_top.env.scr [SB_PASS] I-Type Intsruction passed
+UVM_INFO testbench.sv(705) @ 1: uvm_test_top.env.scr [cont] Need to compare reg and PC to zeros here
+UVM_INFO testbench.sv(404) @ 11: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 31: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 51: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 71: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 91: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 111: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 131: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 151: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 171: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 191: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 211: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 231: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 251: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 271: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 291: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 311: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 331: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(483) @ 351: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 371: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(404) @ 391: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 411: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(404) @ 431: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 451: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 471: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 491: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 511: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(440) @ 531: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 551: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(461) @ 571: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 591: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 611: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 631: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(404) @ 651: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 671: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(461) @ 691: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 711: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 731: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 751: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 771: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 791: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 811: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 831: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 851: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 871: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 891: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 911: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 931: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(502) @ 951: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(404) @ 971: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 991: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1011: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 1031: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 1051: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 1071: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1091: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1111: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(483) @ 1131: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 1151: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 1171: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(404) @ 1191: uvm_test_top.env.scr [SB_PASS] R-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1211: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 1231: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(502) @ 1251: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(440) @ 1271: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 1291: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(502) @ 1311: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(483) @ 1331: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 1351: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(502) @ 1371: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(502) @ 1391: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(502) @ 1411: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(483) @ 1431: uvm_test_top.env.scr [SB_PASS] S-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 1451: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
+UVM_INFO testbench.sv(440) @ 1471: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1491: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1511: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 1531: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(461) @ 1551: uvm_test_top.env.scr [SB_PASS] L-Type Instruction passed
+UVM_INFO testbench.sv(440) @ 1571: uvm_test_top.env.scr [SB_PASS] I-Type Instruction passed
+UVM_INFO testbench.sv(502) @ 1591: uvm_test_top.env.scr [SB_PASS] B-Type instruction Passed
 UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 10000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO testbench.sv(705) @ 10000: uvm_test_top.env.scr [sb] pass count         100
-UVM_INFO testbench.sv(706) @ 10000: uvm_test_top.env.scr [sb] fail count           0
+UVM_INFO testbench.sv(718) @ 10000: uvm_test_top.env.scr [sb] pass count          80
+UVM_INFO testbench.sv(719) @ 10000: uvm_test_top.env.scr [sb] fail count           0
 UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(851) @ 10000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  105
+UVM_INFO :   86
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
 [RNTST]     1
-[SB_PASS]   100
+[SB_PASS]    80
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
+[cont]     1
 [sb]     2
 
 Simulation complete via $finish(1) at time 10 US + 59
 /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
 xcelium> exit
-TOOL:	xrun	25.03-s001: Exiting on May 14, 2026 at 08:08:57 EDT  (total: 00:00:10)
+TOOL:	xrun	25.03-s001: Exiting on May 15, 2026 at 13:58:27 EDT  (total: 00:00:08)
 Done
