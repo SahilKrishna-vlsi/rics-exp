@@ -93,7 +93,7 @@ rics-exp/
 
 - Quick non-UVM run using the simple harness (`test_sc.sv`): compile `rtl/*.sv` and `tb/test_sc.sv`, load `sw/inst_set.hex` as the file shows, then run to produce `sim/SC_wave.vcd`.
 
-- Full UVM run (used during verification): the project has been exercised with Questa/Modelsim. See `tb/log.txt` for the exact `qrun` invocation used in our runs.
+- Full UVM run (used during verification): the project has been exercised with Questa/Modelsim in EDA Playground please make sure to add import line. See `tb/log.txt` for the exact `qrun` invocation used in our runs.
 
 Example Questa command (see `tb/log.txt` for full options):
 
