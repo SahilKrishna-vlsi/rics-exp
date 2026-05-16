@@ -1,0 +1,1756 @@
+Coverage Report Totals BY INSTANCES: Number of Instances 18
+
+    Enabled Coverage              Bins      Hits    Misses    Weight  Coverage
+    ----------------              ----      ----    ------    ------  --------
+    Assertions                       1         1         0         1   100.00%
+    Covergroups                      1        na        na         1    68.28%
+        Coverpoints/Crosses         21        na        na         1        na
+            Covergroup Bins        385       138       247         1    35.84%
+Total coverage (filtered view): 84.14%
+
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /uvm_pkg_sv_unit
+=== Design Unit: work.uvm_pkg_sv_unit
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na    68.28%
+        Coverpoints/Crosses         21        na        na        na
+            Covergroup Bins        385       138       247    35.84%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /uvm_pkg_sv_unit/risc_scr/riscv_cg               68.28%        100          -    Uncovered            
+    covered/total bins:                                   138        385          -                      
+    missing/total bins:                                   247        385          -                      
+    % Hit:                                             35.84%        100          -                      
+    Coverpoint opcode_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin R_TYPE                                         88          1          -    Covered              
+        bin I_TYPE                                         30          1          -    Covered              
+        bin LOAD                                           60          1          -    Covered              
+        bin STORE                                         118          1          -    Covered              
+        bin BRANCH                                         32          1          -    Covered              
+        bin JAL                                           143          1          -    Covered              
+        bin JALR                                           28          1          -    Covered              
+    Coverpoint funct3_cp                               87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        bin auto[0]                                       146          1          -    Covered              
+        bin auto[1]                                       114          1          -    Covered              
+        bin auto[2]                                        88          1          -    Covered              
+        bin auto[3]                                         2          1          -    Covered              
+        bin auto[4]                                       115          1          -    Covered              
+        bin auto[5]                                         2          1          -    Covered              
+        bin auto[6]                                        32          1          -    Covered              
+        bin auto[7]                                         0          1          -    ZERO                 
+    Coverpoint funct7_cp                                3.12%        100          -    Uncovered            
+        covered/total bins:                                 2         64          -                      
+        missing/total bins:                                62         64          -                      
+        % Hit:                                          3.12%        100          -                      
+        bin auto[0:1]                                     238          1          -    Covered              
+        bin auto[2:3]                                     261          1          -    Covered              
+        bin auto[4:5]                                       0          1          -    ZERO                 
+        bin auto[6:7]                                       0          1          -    ZERO                 
+        bin auto[8:9]                                       0          1          -    ZERO                 
+        bin auto[10:11]                                     0          1          -    ZERO                 
+        bin auto[12:13]                                     0          1          -    ZERO                 
+        bin auto[14:15]                                     0          1          -    ZERO                 
+        bin auto[16:17]                                     0          1          -    ZERO                 
+        bin auto[18:19]                                     0          1          -    ZERO                 
+        bin auto[20:21]                                     0          1          -    ZERO                 
+        bin auto[22:23]                                     0          1          -    ZERO                 
+        bin auto[24:25]                                     0          1          -    ZERO                 
+        bin auto[26:27]                                     0          1          -    ZERO                 
+        bin auto[28:29]                                     0          1          -    ZERO                 
+        bin auto[30:31]                                     0          1          -    ZERO                 
+        bin auto[32:33]                                     0          1          -    ZERO                 
+        bin auto[34:35]                                     0          1          -    ZERO                 
+        bin auto[36:37]                                     0          1          -    ZERO                 
+        bin auto[38:39]                                     0          1          -    ZERO                 
+        bin auto[40:41]                                     0          1          -    ZERO                 
+        bin auto[42:43]                                     0          1          -    ZERO                 
+        bin auto[44:45]                                     0          1          -    ZERO                 
+        bin auto[46:47]                                     0          1          -    ZERO                 
+        bin auto[48:49]                                     0          1          -    ZERO                 
+        bin auto[50:51]                                     0          1          -    ZERO                 
+        bin auto[52:53]                                     0          1          -    ZERO                 
+        bin auto[54:55]                                     0          1          -    ZERO                 
+        bin auto[56:57]                                     0          1          -    ZERO                 
+        bin auto[58:59]                                     0          1          -    ZERO                 
+        bin auto[60:61]                                     0          1          -    ZERO                 
+        bin auto[62:63]                                     0          1          -    ZERO                 
+        bin auto[64:65]                                     0          1          -    ZERO                 
+        bin auto[66:67]                                     0          1          -    ZERO                 
+        bin auto[68:69]                                     0          1          -    ZERO                 
+        bin auto[70:71]                                     0          1          -    ZERO                 
+        bin auto[72:73]                                     0          1          -    ZERO                 
+        bin auto[74:75]                                     0          1          -    ZERO                 
+        bin auto[76:77]                                     0          1          -    ZERO                 
+        bin auto[78:79]                                     0          1          -    ZERO                 
+        bin auto[80:81]                                     0          1          -    ZERO                 
+        bin auto[82:83]                                     0          1          -    ZERO                 
+        bin auto[84:85]                                     0          1          -    ZERO                 
+        bin auto[86:87]                                     0          1          -    ZERO                 
+        bin auto[88:89]                                     0          1          -    ZERO                 
+        bin auto[90:91]                                     0          1          -    ZERO                 
+        bin auto[92:93]                                     0          1          -    ZERO                 
+        bin auto[94:95]                                     0          1          -    ZERO                 
+        bin auto[96:97]                                     0          1          -    ZERO                 
+        bin auto[98:99]                                     0          1          -    ZERO                 
+        bin auto[100:101]                                   0          1          -    ZERO                 
+        bin auto[102:103]                                   0          1          -    ZERO                 
+        bin auto[104:105]                                   0          1          -    ZERO                 
+        bin auto[106:107]                                   0          1          -    ZERO                 
+        bin auto[108:109]                                   0          1          -    ZERO                 
+        bin auto[110:111]                                   0          1          -    ZERO                 
+        bin auto[112:113]                                   0          1          -    ZERO                 
+        bin auto[114:115]                                   0          1          -    ZERO                 
+        bin auto[116:117]                                   0          1          -    ZERO                 
+        bin auto[118:119]                                   0          1          -    ZERO                 
+        bin auto[120:121]                                   0          1          -    ZERO                 
+        bin auto[122:123]                                   0          1          -    ZERO                 
+        bin auto[124:125]                                   0          1          -    ZERO                 
+        bin auto[126:127]                                   0          1          -    ZERO                 
+    Coverpoint alu_opcode_cp                           56.25%        100          -    Uncovered            
+        covered/total bins:                                 9         16          -                      
+        missing/total bins:                                 7         16          -                      
+        % Hit:                                         56.25%        100          -                      
+        bin add                                           408          1          -    Covered              
+        bin sub                                             0          1          -    ZERO                 
+        bin And                                             0          1          -    ZERO                 
+        bin Or                                              1          1          -    Covered              
+        bin Xor                                            28          1          -    Covered              
+        bin sll                                            28          1          -    Covered              
+        bin srl                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin slt                                             1          1          -    Covered              
+        bin sltu                                            1          1          -    Covered              
+        bin eq                                              1          1          -    Covered              
+        bin ne                                              1          1          -    Covered              
+        bin lt                                             30          1          -    Covered              
+        bin ge                                              0          1          -    ZERO                 
+        bin ltu                                             0          1          -    ZERO                 
+        bin geu                                             0          1          -    ZERO                 
+    Coverpoint rs1_cp                                  65.62%        100          -    Uncovered            
+        covered/total bins:                                21         32          -                      
+        missing/total bins:                                11         32          -                      
+        % Hit:                                         65.62%        100          -                      
+        bin zero_reg                                      143          1          -    Covered              
+        bin all_regs[1]                                     1          1          -    Covered              
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    28          1          -    Covered              
+        bin all_regs[4]                                     1          1          -    Covered              
+        bin all_regs[5]                                    28          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                     1          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                    28          1          -    Covered              
+        bin all_regs[10]                                   58          1          -    Covered              
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   29          1          -    Covered              
+        bin all_regs[13]                                   57          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                    0          1          -    ZERO                 
+        bin all_regs[16]                                    0          1          -    ZERO                 
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    2          1          -    Covered              
+        bin all_regs[19]                                    1          1          -    Covered              
+        bin all_regs[20]                                   28          1          -    Covered              
+        bin all_regs[21]                                    2          1          -    Covered              
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                   28          1          -    Covered              
+        bin all_regs[24]                                    0          1          -    ZERO                 
+        bin all_regs[25]                                    0          1          -    ZERO                 
+        bin all_regs[26]                                   31          1          -    Covered              
+        bin all_regs[27]                                    2          1          -    Covered              
+        bin all_regs[28]                                    0          1          -    ZERO                 
+        bin all_regs[29]                                   28          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    1          1          -    Covered              
+    Coverpoint rs2_cp                                  59.37%        100          -    Uncovered            
+        covered/total bins:                                19         32          -                      
+        missing/total bins:                                13         32          -                      
+        % Hit:                                         59.37%        100          -                      
+        bin zero_reg                                       31          1          -    Covered              
+        bin all_regs[1]                                     0          1          -    ZERO                 
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    29          1          -    Covered              
+        bin all_regs[4]                                    28          1          -    Covered              
+        bin all_regs[5]                                     0          1          -    ZERO                 
+        bin all_regs[6]                                     0          1          -    ZERO                 
+        bin all_regs[7]                                     0          1          -    ZERO                 
+        bin all_regs[8]                                     3          1          -    Covered              
+        bin all_regs[9]                                     0          1          -    ZERO                 
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   85          1          -    Covered              
+        bin all_regs[13]                                    2          1          -    Covered              
+        bin all_regs[14]                                    1          1          -    Covered              
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                  113          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    1          1          -    Covered              
+        bin all_regs[19]                                    0          1          -    ZERO                 
+        bin all_regs[20]                                    2          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                   28          1          -    Covered              
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   85          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                    0          1          -    ZERO                 
+        bin all_regs[27]                                    1          1          -    Covered              
+        bin all_regs[28]                                    3          1          -    Covered              
+        bin all_regs[29]                                   29          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint rd_cp                                   62.50%        100          -    Uncovered            
+        covered/total bins:                                20         32          -                      
+        missing/total bins:                                12         32          -                      
+        % Hit:                                         62.50%        100          -                      
+        bin zero_reg                                      112          1          -    Covered              
+        bin all_regs[1]                                    28          1          -    Covered              
+        bin all_regs[2]                                     0          1          -    ZERO                 
+        bin all_regs[3]                                     0          1          -    ZERO                 
+        bin all_regs[4]                                    30          1          -    Covered              
+        bin all_regs[5]                                     1          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                    28          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                     1          1          -    Covered              
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    1          1          -    Covered              
+        bin all_regs[12]                                   33          1          -    Covered              
+        bin all_regs[13]                                   56          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                    3          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    0          1          -    ZERO                 
+        bin all_regs[19]                                   28          1          -    Covered              
+        bin all_regs[20]                                   30          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   58          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                   30          1          -    Covered              
+        bin all_regs[27]                                    0          1          -    ZERO                 
+        bin all_regs[28]                                    1          1          -    Covered              
+        bin all_regs[29]                                    1          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint mem_read_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                           60          1          -    Covered              
+    Coverpoint reg_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                          150          1          -    Covered              
+        bin write                                         349          1          -    Covered              
+    Coverpoint mem_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write                                         118          1          -    Covered              
+    Coverpoint write_from_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu_wb                                        268          1          -    Covered              
+        bin mem_wb                                         60          1          -    Covered              
+        bin pc4_wb                                        171          1          -    Covered              
+    Coverpoint pc_select_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pc_plus4                                      300          1          -    Covered              
+        bin branch_pc                                     171          1          -    Covered              
+        bin jump_pc                                        28          1          -    Covered              
+    Coverpoint zero_flag_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                    498          1          -    Covered              
+    Coverpoint lt_flag_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less                                           28          1          -    Covered              
+        bin not_less                                      471          1          -    Covered              
+    Coverpoint ltu_flag_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less_u                                          1          1          -    Covered              
+        bin not_less_u                                    498          1          -    Covered              
+    Coverpoint imm_cp                                  66.66%        100          -    Uncovered            
+        covered/total bins:                                 2          3          -                      
+        missing/total bins:                                 1          3          -                      
+        % Hit:                                         66.66%        100          -                      
+        bin zero                                           88          1          -    Covered              
+        bin small_pos                                       0          1          -    ZERO                 
+        bin large_pos                                     411          1          -    Covered              
+    Cross opcode_x_writeback                           33.33%        100          -    Uncovered            
+        covered/total bins:                                 7         21          -                      
+        missing/total bins:                                14         21          -                      
+        % Hit:                                         33.33%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,pc4_wb>                              28          1          -    Covered              
+            bin <JAL,pc4_wb>                              143          1          -    Covered              
+            bin <LOAD,mem_wb>                              60          1          -    Covered              
+            bin <BRANCH,alu_wb>                            32          1          -    Covered              
+            bin <STORE,alu_wb>                            118          1          -    Covered              
+            bin <I_TYPE,alu_wb>                            30          1          -    Covered              
+            bin <R_TYPE,alu_wb>                            88          1          -    Covered              
+            bin <BRANCH,pc4_wb>                             0          1          1    ZERO                 
+            bin <STORE,pc4_wb>                              0          1          1    ZERO                 
+            bin <LOAD,pc4_wb>                               0          1          1    ZERO                 
+            bin <I_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <JALR,mem_wb>                               0          1          1    ZERO                 
+            bin <JAL,mem_wb>                                0          1          1    ZERO                 
+            bin <BRANCH,mem_wb>                             0          1          1    ZERO                 
+            bin <STORE,mem_wb>                              0          1          1    ZERO                 
+            bin <I_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <JALR,alu_wb>                               0          1          1    ZERO                 
+            bin <JAL,alu_wb>                                0          1          1    ZERO                 
+            bin <LOAD,alu_wb>                               0          1          1    ZERO                 
+    Cross opcode_x_mem                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          7          -                      
+        missing/total bins:                                 7          7          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          7    ZERO                 
+    Cross opcode_x_reg                                 50.00%        100          -    Uncovered            
+        covered/total bins:                                 7         14          -                      
+        missing/total bins:                                 7         14          -                      
+        % Hit:                                         50.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,write>                               28          1          -    Covered              
+            bin <JAL,write>                               143          1          -    Covered              
+            bin <LOAD,write>                               60          1          -    Covered              
+            bin <I_TYPE,write>                             30          1          -    Covered              
+            bin <R_TYPE,write>                             88          1          -    Covered              
+            bin <BRANCH,read>                              32          1          -    Covered              
+            bin <STORE,read>                              118          1          -    Covered              
+            bin <BRANCH,write>                              0          1          1    ZERO                 
+            bin <STORE,write>                               0          1          1    ZERO                 
+            bin <JALR,read>                                 0          1          1    ZERO                 
+            bin <JAL,read>                                  0          1          1    ZERO                 
+            bin <LOAD,read>                                 0          1          1    ZERO                 
+            bin <I_TYPE,read>                               0          1          1    ZERO                 
+            bin <R_TYPE,read>                               0          1          1    ZERO                 
+    Cross opcode_x_pcselect                            38.09%        100          -    Uncovered            
+        covered/total bins:                                 8         21          -                      
+        missing/total bins:                                13         21          -                      
+        % Hit:                                         38.09%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,jump_pc>                             28          1          -    Covered              
+            bin <JAL,branch_pc>                           143          1          -    Covered              
+            bin <BRANCH,branch_pc>                         28          1          -    Covered              
+            bin <BRANCH,pc_plus4>                           4          1          -    Covered              
+            bin <STORE,pc_plus4>                          118          1          -    Covered              
+            bin <LOAD,pc_plus4>                            60          1          -    Covered              
+            bin <I_TYPE,pc_plus4>                          30          1          -    Covered              
+            bin <R_TYPE,pc_plus4>                          88          1          -    Covered              
+            bin <JAL,jump_pc>                               0          1          1    ZERO                 
+            bin <BRANCH,jump_pc>                            0          1          1    ZERO                 
+            bin <STORE,jump_pc>                             0          1          1    ZERO                 
+            bin <LOAD,jump_pc>                              0          1          1    ZERO                 
+            bin <I_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <R_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <JALR,branch_pc>                            0          1          1    ZERO                 
+            bin <STORE,branch_pc>                           0          1          1    ZERO                 
+            bin <LOAD,branch_pc>                            0          1          1    ZERO                 
+            bin <I_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <R_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <JALR,pc_plus4>                             0          1          1    ZERO                 
+            bin <JAL,pc_plus4>                              0          1          1    ZERO                 
+    Cross opcode_x_alu                                 11.60%        100          -    Uncovered            
+        covered/total bins:                                13        112          -                      
+        missing/total bins:                                99        112          -                      
+        % Hit:                                         11.60%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <BRANCH,lt>                                30          1          -    Covered              
+            bin <BRANCH,ne>                                 1          1          -    Covered              
+            bin <BRANCH,eq>                                 1          1          -    Covered              
+            bin <I_TYPE,sltu>                               1          1          -    Covered              
+            bin <R_TYPE,slt>                                1          1          -    Covered              
+            bin <R_TYPE,sll>                               28          1          -    Covered              
+            bin <I_TYPE,Xor>                               28          1          -    Covered              
+            bin <I_TYPE,Or>                                 1          1          -    Covered              
+            bin <JALR,add>                                 28          1          -    Covered              
+            bin <JAL,add>                                 143          1          -    Covered              
+            bin <STORE,add>                               118          1          -    Covered              
+            bin <LOAD,add>                                 60          1          -    Covered              
+            bin <R_TYPE,add>                               59          1          -    Covered              
+            bin <*,geu>                                     0          1          7    ZERO                 
+            bin <*,ltu>                                     0          1          7    ZERO                 
+            bin <*,ge>                                      0          1          7    ZERO                 
+            bin <*,sra>                                     0          1          7    ZERO                 
+            bin <*,srl>                                     0          1          7    ZERO                 
+            bin <*,And>                                     0          1          7    ZERO                 
+            bin <*,sub>                                     0          1          7    ZERO                 
+            bin <JALR,lt>                                   0          1          1    ZERO                 
+            bin <JAL,lt>                                    0          1          1    ZERO                 
+            bin <STORE,lt>                                  0          1          1    ZERO                 
+            bin <LOAD,lt>                                   0          1          1    ZERO                 
+            bin <I_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <R_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <JALR,ne>                                   0          1          1    ZERO                 
+            bin <JAL,ne>                                    0          1          1    ZERO                 
+            bin <STORE,ne>                                  0          1          1    ZERO                 
+            bin <LOAD,ne>                                   0          1          1    ZERO                 
+            bin <I_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <R_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <JALR,eq>                                   0          1          1    ZERO                 
+            bin <JAL,eq>                                    0          1          1    ZERO                 
+            bin <STORE,eq>                                  0          1          1    ZERO                 
+            bin <LOAD,eq>                                   0          1          1    ZERO                 
+            bin <I_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <R_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <JALR,sltu>                                 0          1          1    ZERO                 
+            bin <JAL,sltu>                                  0          1          1    ZERO                 
+            bin <BRANCH,sltu>                               0          1          1    ZERO                 
+            bin <STORE,sltu>                                0          1          1    ZERO                 
+            bin <LOAD,sltu>                                 0          1          1    ZERO                 
+            bin <R_TYPE,sltu>                               0          1          1    ZERO                 
+            bin <JALR,slt>                                  0          1          1    ZERO                 
+            bin <JAL,slt>                                   0          1          1    ZERO                 
+            bin <BRANCH,slt>                                0          1          1    ZERO                 
+            bin <STORE,slt>                                 0          1          1    ZERO                 
+            bin <LOAD,slt>                                  0          1          1    ZERO                 
+            bin <I_TYPE,slt>                                0          1          1    ZERO                 
+            bin <JALR,sll>                                  0          1          1    ZERO                 
+            bin <JAL,sll>                                   0          1          1    ZERO                 
+            bin <BRANCH,sll>                                0          1          1    ZERO                 
+            bin <STORE,sll>                                 0          1          1    ZERO                 
+            bin <LOAD,sll>                                  0          1          1    ZERO                 
+            bin <I_TYPE,sll>                                0          1          1    ZERO                 
+            bin <JALR,Xor>                                  0          1          1    ZERO                 
+            bin <JAL,Xor>                                   0          1          1    ZERO                 
+            bin <BRANCH,Xor>                                0          1          1    ZERO                 
+            bin <STORE,Xor>                                 0          1          1    ZERO                 
+            bin <LOAD,Xor>                                  0          1          1    ZERO                 
+            bin <R_TYPE,Xor>                                0          1          1    ZERO                 
+            bin <JALR,Or>                                   0          1          1    ZERO                 
+            bin <JAL,Or>                                    0          1          1    ZERO                 
+            bin <BRANCH,Or>                                 0          1          1    ZERO                 
+            bin <STORE,Or>                                  0          1          1    ZERO                 
+            bin <LOAD,Or>                                   0          1          1    ZERO                 
+            bin <R_TYPE,Or>                                 0          1          1    ZERO                 
+            bin <BRANCH,add>                                0          1          1    ZERO                 
+            bin <I_TYPE,add>                                0          1          1    ZERO                 
+ Covergroup instance riscv                             68.28%        100          -    Uncovered            
+    covered/total bins:                                   138        385          -                      
+    missing/total bins:                                   247        385          -                      
+    % Hit:                                             35.84%        100          -                      
+    Coverpoint opcode_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin R_TYPE                                         88          1          -    Covered              
+        bin I_TYPE                                         30          1          -    Covered              
+        bin LOAD                                           60          1          -    Covered              
+        bin STORE                                         118          1          -    Covered              
+        bin BRANCH                                         32          1          -    Covered              
+        bin JAL                                           143          1          -    Covered              
+        bin JALR                                           28          1          -    Covered              
+    Coverpoint funct3_cp                               87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        bin auto[0]                                       146          1          -    Covered              
+        bin auto[1]                                       114          1          -    Covered              
+        bin auto[2]                                        88          1          -    Covered              
+        bin auto[3]                                         2          1          -    Covered              
+        bin auto[4]                                       115          1          -    Covered              
+        bin auto[5]                                         2          1          -    Covered              
+        bin auto[6]                                        32          1          -    Covered              
+        bin auto[7]                                         0          1          -    ZERO                 
+    Coverpoint funct7_cp                                3.12%        100          -    Uncovered            
+        covered/total bins:                                 2         64          -                      
+        missing/total bins:                                62         64          -                      
+        % Hit:                                          3.12%        100          -                      
+        bin auto[0:1]                                     238          1          -    Covered              
+        bin auto[2:3]                                     261          1          -    Covered              
+        bin auto[4:5]                                       0          1          -    ZERO                 
+        bin auto[6:7]                                       0          1          -    ZERO                 
+        bin auto[8:9]                                       0          1          -    ZERO                 
+        bin auto[10:11]                                     0          1          -    ZERO                 
+        bin auto[12:13]                                     0          1          -    ZERO                 
+        bin auto[14:15]                                     0          1          -    ZERO                 
+        bin auto[16:17]                                     0          1          -    ZERO                 
+        bin auto[18:19]                                     0          1          -    ZERO                 
+        bin auto[20:21]                                     0          1          -    ZERO                 
+        bin auto[22:23]                                     0          1          -    ZERO                 
+        bin auto[24:25]                                     0          1          -    ZERO                 
+        bin auto[26:27]                                     0          1          -    ZERO                 
+        bin auto[28:29]                                     0          1          -    ZERO                 
+        bin auto[30:31]                                     0          1          -    ZERO                 
+        bin auto[32:33]                                     0          1          -    ZERO                 
+        bin auto[34:35]                                     0          1          -    ZERO                 
+        bin auto[36:37]                                     0          1          -    ZERO                 
+        bin auto[38:39]                                     0          1          -    ZERO                 
+        bin auto[40:41]                                     0          1          -    ZERO                 
+        bin auto[42:43]                                     0          1          -    ZERO                 
+        bin auto[44:45]                                     0          1          -    ZERO                 
+        bin auto[46:47]                                     0          1          -    ZERO                 
+        bin auto[48:49]                                     0          1          -    ZERO                 
+        bin auto[50:51]                                     0          1          -    ZERO                 
+        bin auto[52:53]                                     0          1          -    ZERO                 
+        bin auto[54:55]                                     0          1          -    ZERO                 
+        bin auto[56:57]                                     0          1          -    ZERO                 
+        bin auto[58:59]                                     0          1          -    ZERO                 
+        bin auto[60:61]                                     0          1          -    ZERO                 
+        bin auto[62:63]                                     0          1          -    ZERO                 
+        bin auto[64:65]                                     0          1          -    ZERO                 
+        bin auto[66:67]                                     0          1          -    ZERO                 
+        bin auto[68:69]                                     0          1          -    ZERO                 
+        bin auto[70:71]                                     0          1          -    ZERO                 
+        bin auto[72:73]                                     0          1          -    ZERO                 
+        bin auto[74:75]                                     0          1          -    ZERO                 
+        bin auto[76:77]                                     0          1          -    ZERO                 
+        bin auto[78:79]                                     0          1          -    ZERO                 
+        bin auto[80:81]                                     0          1          -    ZERO                 
+        bin auto[82:83]                                     0          1          -    ZERO                 
+        bin auto[84:85]                                     0          1          -    ZERO                 
+        bin auto[86:87]                                     0          1          -    ZERO                 
+        bin auto[88:89]                                     0          1          -    ZERO                 
+        bin auto[90:91]                                     0          1          -    ZERO                 
+        bin auto[92:93]                                     0          1          -    ZERO                 
+        bin auto[94:95]                                     0          1          -    ZERO                 
+        bin auto[96:97]                                     0          1          -    ZERO                 
+        bin auto[98:99]                                     0          1          -    ZERO                 
+        bin auto[100:101]                                   0          1          -    ZERO                 
+        bin auto[102:103]                                   0          1          -    ZERO                 
+        bin auto[104:105]                                   0          1          -    ZERO                 
+        bin auto[106:107]                                   0          1          -    ZERO                 
+        bin auto[108:109]                                   0          1          -    ZERO                 
+        bin auto[110:111]                                   0          1          -    ZERO                 
+        bin auto[112:113]                                   0          1          -    ZERO                 
+        bin auto[114:115]                                   0          1          -    ZERO                 
+        bin auto[116:117]                                   0          1          -    ZERO                 
+        bin auto[118:119]                                   0          1          -    ZERO                 
+        bin auto[120:121]                                   0          1          -    ZERO                 
+        bin auto[122:123]                                   0          1          -    ZERO                 
+        bin auto[124:125]                                   0          1          -    ZERO                 
+        bin auto[126:127]                                   0          1          -    ZERO                 
+    Coverpoint alu_opcode_cp                           56.25%        100          -    Uncovered            
+        covered/total bins:                                 9         16          -                      
+        missing/total bins:                                 7         16          -                      
+        % Hit:                                         56.25%        100          -                      
+        bin add                                           408          1          -    Covered              
+        bin sub                                             0          1          -    ZERO                 
+        bin And                                             0          1          -    ZERO                 
+        bin Or                                              1          1          -    Covered              
+        bin Xor                                            28          1          -    Covered              
+        bin sll                                            28          1          -    Covered              
+        bin srl                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin slt                                             1          1          -    Covered              
+        bin sltu                                            1          1          -    Covered              
+        bin eq                                              1          1          -    Covered              
+        bin ne                                              1          1          -    Covered              
+        bin lt                                             30          1          -    Covered              
+        bin ge                                              0          1          -    ZERO                 
+        bin ltu                                             0          1          -    ZERO                 
+        bin geu                                             0          1          -    ZERO                 
+    Coverpoint rs1_cp                                  65.62%        100          -    Uncovered            
+        covered/total bins:                                21         32          -                      
+        missing/total bins:                                11         32          -                      
+        % Hit:                                         65.62%        100          -                      
+        bin zero_reg                                      143          1          -    Covered              
+        bin all_regs[1]                                     1          1          -    Covered              
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    28          1          -    Covered              
+        bin all_regs[4]                                     1          1          -    Covered              
+        bin all_regs[5]                                    28          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                     1          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                    28          1          -    Covered              
+        bin all_regs[10]                                   58          1          -    Covered              
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   29          1          -    Covered              
+        bin all_regs[13]                                   57          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                    0          1          -    ZERO                 
+        bin all_regs[16]                                    0          1          -    ZERO                 
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    2          1          -    Covered              
+        bin all_regs[19]                                    1          1          -    Covered              
+        bin all_regs[20]                                   28          1          -    Covered              
+        bin all_regs[21]                                    2          1          -    Covered              
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                   28          1          -    Covered              
+        bin all_regs[24]                                    0          1          -    ZERO                 
+        bin all_regs[25]                                    0          1          -    ZERO                 
+        bin all_regs[26]                                   31          1          -    Covered              
+        bin all_regs[27]                                    2          1          -    Covered              
+        bin all_regs[28]                                    0          1          -    ZERO                 
+        bin all_regs[29]                                   28          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    1          1          -    Covered              
+    Coverpoint rs2_cp                                  59.37%        100          -    Uncovered            
+        covered/total bins:                                19         32          -                      
+        missing/total bins:                                13         32          -                      
+        % Hit:                                         59.37%        100          -                      
+        bin zero_reg                                       31          1          -    Covered              
+        bin all_regs[1]                                     0          1          -    ZERO                 
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    29          1          -    Covered              
+        bin all_regs[4]                                    28          1          -    Covered              
+        bin all_regs[5]                                     0          1          -    ZERO                 
+        bin all_regs[6]                                     0          1          -    ZERO                 
+        bin all_regs[7]                                     0          1          -    ZERO                 
+        bin all_regs[8]                                     3          1          -    Covered              
+        bin all_regs[9]                                     0          1          -    ZERO                 
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   85          1          -    Covered              
+        bin all_regs[13]                                    2          1          -    Covered              
+        bin all_regs[14]                                    1          1          -    Covered              
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                  113          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    1          1          -    Covered              
+        bin all_regs[19]                                    0          1          -    ZERO                 
+        bin all_regs[20]                                    2          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                   28          1          -    Covered              
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   85          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                    0          1          -    ZERO                 
+        bin all_regs[27]                                    1          1          -    Covered              
+        bin all_regs[28]                                    3          1          -    Covered              
+        bin all_regs[29]                                   29          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint rd_cp                                   62.50%        100          -    Uncovered            
+        covered/total bins:                                20         32          -                      
+        missing/total bins:                                12         32          -                      
+        % Hit:                                         62.50%        100          -                      
+        bin zero_reg                                      112          1          -    Covered              
+        bin all_regs[1]                                    28          1          -    Covered              
+        bin all_regs[2]                                     0          1          -    ZERO                 
+        bin all_regs[3]                                     0          1          -    ZERO                 
+        bin all_regs[4]                                    30          1          -    Covered              
+        bin all_regs[5]                                     1          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                    28          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                     1          1          -    Covered              
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    1          1          -    Covered              
+        bin all_regs[12]                                   33          1          -    Covered              
+        bin all_regs[13]                                   56          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                    3          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    0          1          -    ZERO                 
+        bin all_regs[19]                                   28          1          -    Covered              
+        bin all_regs[20]                                   30          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   58          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                   30          1          -    Covered              
+        bin all_regs[27]                                    0          1          -    ZERO                 
+        bin all_regs[28]                                    1          1          -    Covered              
+        bin all_regs[29]                                    1          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint mem_read_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                           60          1          -    Covered              
+    Coverpoint reg_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                          150          1          -    Covered              
+        bin write                                         349          1          -    Covered              
+    Coverpoint mem_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write                                         118          1          -    Covered              
+    Coverpoint write_from_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu_wb                                        268          1          -    Covered              
+        bin mem_wb                                         60          1          -    Covered              
+        bin pc4_wb                                        171          1          -    Covered              
+    Coverpoint pc_select_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pc_plus4                                      300          1          -    Covered              
+        bin branch_pc                                     171          1          -    Covered              
+        bin jump_pc                                        28          1          -    Covered              
+    Coverpoint zero_flag_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                    498          1          -    Covered              
+    Coverpoint lt_flag_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less                                           28          1          -    Covered              
+        bin not_less                                      471          1          -    Covered              
+    Coverpoint ltu_flag_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less_u                                          1          1          -    Covered              
+        bin not_less_u                                    498          1          -    Covered              
+    Coverpoint imm_cp                                  66.66%        100          -    Uncovered            
+        covered/total bins:                                 2          3          -                      
+        missing/total bins:                                 1          3          -                      
+        % Hit:                                         66.66%        100          -                      
+        bin zero                                           88          1          -    Covered              
+        bin small_pos                                       0          1          -    ZERO                 
+        bin large_pos                                     411          1          -    Covered              
+    Cross opcode_x_writeback                           33.33%        100          -    Uncovered            
+        covered/total bins:                                 7         21          -                      
+        missing/total bins:                                14         21          -                      
+        % Hit:                                         33.33%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,pc4_wb>                              28          1          -    Covered              
+            bin <JAL,pc4_wb>                              143          1          -    Covered              
+            bin <LOAD,mem_wb>                              60          1          -    Covered              
+            bin <BRANCH,alu_wb>                            32          1          -    Covered              
+            bin <STORE,alu_wb>                            118          1          -    Covered              
+            bin <I_TYPE,alu_wb>                            30          1          -    Covered              
+            bin <R_TYPE,alu_wb>                            88          1          -    Covered              
+            bin <BRANCH,pc4_wb>                             0          1          1    ZERO                 
+            bin <STORE,pc4_wb>                              0          1          1    ZERO                 
+            bin <LOAD,pc4_wb>                               0          1          1    ZERO                 
+            bin <I_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <JALR,mem_wb>                               0          1          1    ZERO                 
+            bin <JAL,mem_wb>                                0          1          1    ZERO                 
+            bin <BRANCH,mem_wb>                             0          1          1    ZERO                 
+            bin <STORE,mem_wb>                              0          1          1    ZERO                 
+            bin <I_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <JALR,alu_wb>                               0          1          1    ZERO                 
+            bin <JAL,alu_wb>                                0          1          1    ZERO                 
+            bin <LOAD,alu_wb>                               0          1          1    ZERO                 
+    Cross opcode_x_mem                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          7          -                      
+        missing/total bins:                                 7          7          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          7    ZERO                 
+    Cross opcode_x_reg                                 50.00%        100          -    Uncovered            
+        covered/total bins:                                 7         14          -                      
+        missing/total bins:                                 7         14          -                      
+        % Hit:                                         50.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,write>                               28          1          -    Covered              
+            bin <JAL,write>                               143          1          -    Covered              
+            bin <LOAD,write>                               60          1          -    Covered              
+            bin <I_TYPE,write>                             30          1          -    Covered              
+            bin <R_TYPE,write>                             88          1          -    Covered              
+            bin <BRANCH,read>                              32          1          -    Covered              
+            bin <STORE,read>                              118          1          -    Covered              
+            bin <BRANCH,write>                              0          1          1    ZERO                 
+            bin <STORE,write>                               0          1          1    ZERO                 
+            bin <JALR,read>                                 0          1          1    ZERO                 
+            bin <JAL,read>                                  0          1          1    ZERO                 
+            bin <LOAD,read>                                 0          1          1    ZERO                 
+            bin <I_TYPE,read>                               0          1          1    ZERO                 
+            bin <R_TYPE,read>                               0          1          1    ZERO                 
+    Cross opcode_x_pcselect                            38.09%        100          -    Uncovered            
+        covered/total bins:                                 8         21          -                      
+        missing/total bins:                                13         21          -                      
+        % Hit:                                         38.09%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,jump_pc>                             28          1          -    Covered              
+            bin <JAL,branch_pc>                           143          1          -    Covered              
+            bin <BRANCH,branch_pc>                         28          1          -    Covered              
+            bin <BRANCH,pc_plus4>                           4          1          -    Covered              
+            bin <STORE,pc_plus4>                          118          1          -    Covered              
+            bin <LOAD,pc_plus4>                            60          1          -    Covered              
+            bin <I_TYPE,pc_plus4>                          30          1          -    Covered              
+            bin <R_TYPE,pc_plus4>                          88          1          -    Covered              
+            bin <JAL,jump_pc>                               0          1          1    ZERO                 
+            bin <BRANCH,jump_pc>                            0          1          1    ZERO                 
+            bin <STORE,jump_pc>                             0          1          1    ZERO                 
+            bin <LOAD,jump_pc>                              0          1          1    ZERO                 
+            bin <I_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <R_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <JALR,branch_pc>                            0          1          1    ZERO                 
+            bin <STORE,branch_pc>                           0          1          1    ZERO                 
+            bin <LOAD,branch_pc>                            0          1          1    ZERO                 
+            bin <I_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <R_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <JALR,pc_plus4>                             0          1          1    ZERO                 
+            bin <JAL,pc_plus4>                              0          1          1    ZERO                 
+    Cross opcode_x_alu                                 11.60%        100          -    Uncovered            
+        covered/total bins:                                13        112          -                      
+        missing/total bins:                                99        112          -                      
+        % Hit:                                         11.60%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <BRANCH,lt>                                30          1          -    Covered              
+            bin <BRANCH,ne>                                 1          1          -    Covered              
+            bin <BRANCH,eq>                                 1          1          -    Covered              
+            bin <I_TYPE,sltu>                               1          1          -    Covered              
+            bin <R_TYPE,slt>                                1          1          -    Covered              
+            bin <R_TYPE,sll>                               28          1          -    Covered              
+            bin <I_TYPE,Xor>                               28          1          -    Covered              
+            bin <I_TYPE,Or>                                 1          1          -    Covered              
+            bin <JALR,add>                                 28          1          -    Covered              
+            bin <JAL,add>                                 143          1          -    Covered              
+            bin <STORE,add>                               118          1          -    Covered              
+            bin <LOAD,add>                                 60          1          -    Covered              
+            bin <R_TYPE,add>                               59          1          -    Covered              
+            bin <*,geu>                                     0          1          7    ZERO                 
+            bin <*,ltu>                                     0          1          7    ZERO                 
+            bin <*,ge>                                      0          1          7    ZERO                 
+            bin <*,sra>                                     0          1          7    ZERO                 
+            bin <*,srl>                                     0          1          7    ZERO                 
+            bin <*,And>                                     0          1          7    ZERO                 
+            bin <*,sub>                                     0          1          7    ZERO                 
+            bin <JALR,lt>                                   0          1          1    ZERO                 
+            bin <JAL,lt>                                    0          1          1    ZERO                 
+            bin <STORE,lt>                                  0          1          1    ZERO                 
+            bin <LOAD,lt>                                   0          1          1    ZERO                 
+            bin <I_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <R_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <JALR,ne>                                   0          1          1    ZERO                 
+            bin <JAL,ne>                                    0          1          1    ZERO                 
+            bin <STORE,ne>                                  0          1          1    ZERO                 
+            bin <LOAD,ne>                                   0          1          1    ZERO                 
+            bin <I_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <R_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <JALR,eq>                                   0          1          1    ZERO                 
+            bin <JAL,eq>                                    0          1          1    ZERO                 
+            bin <STORE,eq>                                  0          1          1    ZERO                 
+            bin <LOAD,eq>                                   0          1          1    ZERO                 
+            bin <I_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <R_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <JALR,sltu>                                 0          1          1    ZERO                 
+            bin <JAL,sltu>                                  0          1          1    ZERO                 
+            bin <BRANCH,sltu>                               0          1          1    ZERO                 
+            bin <STORE,sltu>                                0          1          1    ZERO                 
+            bin <LOAD,sltu>                                 0          1          1    ZERO                 
+            bin <R_TYPE,sltu>                               0          1          1    ZERO                 
+            bin <JALR,slt>                                  0          1          1    ZERO                 
+            bin <JAL,slt>                                   0          1          1    ZERO                 
+            bin <BRANCH,slt>                                0          1          1    ZERO                 
+            bin <STORE,slt>                                 0          1          1    ZERO                 
+            bin <LOAD,slt>                                  0          1          1    ZERO                 
+            bin <I_TYPE,slt>                                0          1          1    ZERO                 
+            bin <JALR,sll>                                  0          1          1    ZERO                 
+            bin <JAL,sll>                                   0          1          1    ZERO                 
+            bin <BRANCH,sll>                                0          1          1    ZERO                 
+            bin <STORE,sll>                                 0          1          1    ZERO                 
+            bin <LOAD,sll>                                  0          1          1    ZERO                 
+            bin <I_TYPE,sll>                                0          1          1    ZERO                 
+            bin <JALR,Xor>                                  0          1          1    ZERO                 
+            bin <JAL,Xor>                                   0          1          1    ZERO                 
+            bin <BRANCH,Xor>                                0          1          1    ZERO                 
+            bin <STORE,Xor>                                 0          1          1    ZERO                 
+            bin <LOAD,Xor>                                  0          1          1    ZERO                 
+            bin <R_TYPE,Xor>                                0          1          1    ZERO                 
+            bin <JALR,Or>                                   0          1          1    ZERO                 
+            bin <JAL,Or>                                    0          1          1    ZERO                 
+            bin <BRANCH,Or>                                 0          1          1    ZERO                 
+            bin <STORE,Or>                                  0          1          1    ZERO                 
+            bin <LOAD,Or>                                   0          1          1    ZERO                 
+            bin <R_TYPE,Or>                                 0          1          1    ZERO                 
+            bin <BRANCH,add>                                0          1          1    ZERO                 
+            bin <I_TYPE,add>                                0          1          1    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /uvm_pkg_sv_unit/risc_scr/riscv_cg               68.28%        100          -    Uncovered            
+    covered/total bins:                                   138        385          -                      
+    missing/total bins:                                   247        385          -                      
+    % Hit:                                             35.84%        100          -                      
+    Coverpoint opcode_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin R_TYPE                                         88          1          -    Covered              
+        bin I_TYPE                                         30          1          -    Covered              
+        bin LOAD                                           60          1          -    Covered              
+        bin STORE                                         118          1          -    Covered              
+        bin BRANCH                                         32          1          -    Covered              
+        bin JAL                                           143          1          -    Covered              
+        bin JALR                                           28          1          -    Covered              
+    Coverpoint funct3_cp                               87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        bin auto[0]                                       146          1          -    Covered              
+        bin auto[1]                                       114          1          -    Covered              
+        bin auto[2]                                        88          1          -    Covered              
+        bin auto[3]                                         2          1          -    Covered              
+        bin auto[4]                                       115          1          -    Covered              
+        bin auto[5]                                         2          1          -    Covered              
+        bin auto[6]                                        32          1          -    Covered              
+        bin auto[7]                                         0          1          -    ZERO                 
+    Coverpoint funct7_cp                                3.12%        100          -    Uncovered            
+        covered/total bins:                                 2         64          -                      
+        missing/total bins:                                62         64          -                      
+        % Hit:                                          3.12%        100          -                      
+        bin auto[0:1]                                     238          1          -    Covered              
+        bin auto[2:3]                                     261          1          -    Covered              
+        bin auto[4:5]                                       0          1          -    ZERO                 
+        bin auto[6:7]                                       0          1          -    ZERO                 
+        bin auto[8:9]                                       0          1          -    ZERO                 
+        bin auto[10:11]                                     0          1          -    ZERO                 
+        bin auto[12:13]                                     0          1          -    ZERO                 
+        bin auto[14:15]                                     0          1          -    ZERO                 
+        bin auto[16:17]                                     0          1          -    ZERO                 
+        bin auto[18:19]                                     0          1          -    ZERO                 
+        bin auto[20:21]                                     0          1          -    ZERO                 
+        bin auto[22:23]                                     0          1          -    ZERO                 
+        bin auto[24:25]                                     0          1          -    ZERO                 
+        bin auto[26:27]                                     0          1          -    ZERO                 
+        bin auto[28:29]                                     0          1          -    ZERO                 
+        bin auto[30:31]                                     0          1          -    ZERO                 
+        bin auto[32:33]                                     0          1          -    ZERO                 
+        bin auto[34:35]                                     0          1          -    ZERO                 
+        bin auto[36:37]                                     0          1          -    ZERO                 
+        bin auto[38:39]                                     0          1          -    ZERO                 
+        bin auto[40:41]                                     0          1          -    ZERO                 
+        bin auto[42:43]                                     0          1          -    ZERO                 
+        bin auto[44:45]                                     0          1          -    ZERO                 
+        bin auto[46:47]                                     0          1          -    ZERO                 
+        bin auto[48:49]                                     0          1          -    ZERO                 
+        bin auto[50:51]                                     0          1          -    ZERO                 
+        bin auto[52:53]                                     0          1          -    ZERO                 
+        bin auto[54:55]                                     0          1          -    ZERO                 
+        bin auto[56:57]                                     0          1          -    ZERO                 
+        bin auto[58:59]                                     0          1          -    ZERO                 
+        bin auto[60:61]                                     0          1          -    ZERO                 
+        bin auto[62:63]                                     0          1          -    ZERO                 
+        bin auto[64:65]                                     0          1          -    ZERO                 
+        bin auto[66:67]                                     0          1          -    ZERO                 
+        bin auto[68:69]                                     0          1          -    ZERO                 
+        bin auto[70:71]                                     0          1          -    ZERO                 
+        bin auto[72:73]                                     0          1          -    ZERO                 
+        bin auto[74:75]                                     0          1          -    ZERO                 
+        bin auto[76:77]                                     0          1          -    ZERO                 
+        bin auto[78:79]                                     0          1          -    ZERO                 
+        bin auto[80:81]                                     0          1          -    ZERO                 
+        bin auto[82:83]                                     0          1          -    ZERO                 
+        bin auto[84:85]                                     0          1          -    ZERO                 
+        bin auto[86:87]                                     0          1          -    ZERO                 
+        bin auto[88:89]                                     0          1          -    ZERO                 
+        bin auto[90:91]                                     0          1          -    ZERO                 
+        bin auto[92:93]                                     0          1          -    ZERO                 
+        bin auto[94:95]                                     0          1          -    ZERO                 
+        bin auto[96:97]                                     0          1          -    ZERO                 
+        bin auto[98:99]                                     0          1          -    ZERO                 
+        bin auto[100:101]                                   0          1          -    ZERO                 
+        bin auto[102:103]                                   0          1          -    ZERO                 
+        bin auto[104:105]                                   0          1          -    ZERO                 
+        bin auto[106:107]                                   0          1          -    ZERO                 
+        bin auto[108:109]                                   0          1          -    ZERO                 
+        bin auto[110:111]                                   0          1          -    ZERO                 
+        bin auto[112:113]                                   0          1          -    ZERO                 
+        bin auto[114:115]                                   0          1          -    ZERO                 
+        bin auto[116:117]                                   0          1          -    ZERO                 
+        bin auto[118:119]                                   0          1          -    ZERO                 
+        bin auto[120:121]                                   0          1          -    ZERO                 
+        bin auto[122:123]                                   0          1          -    ZERO                 
+        bin auto[124:125]                                   0          1          -    ZERO                 
+        bin auto[126:127]                                   0          1          -    ZERO                 
+    Coverpoint alu_opcode_cp                           56.25%        100          -    Uncovered            
+        covered/total bins:                                 9         16          -                      
+        missing/total bins:                                 7         16          -                      
+        % Hit:                                         56.25%        100          -                      
+        bin add                                           408          1          -    Covered              
+        bin sub                                             0          1          -    ZERO                 
+        bin And                                             0          1          -    ZERO                 
+        bin Or                                              1          1          -    Covered              
+        bin Xor                                            28          1          -    Covered              
+        bin sll                                            28          1          -    Covered              
+        bin srl                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin slt                                             1          1          -    Covered              
+        bin sltu                                            1          1          -    Covered              
+        bin eq                                              1          1          -    Covered              
+        bin ne                                              1          1          -    Covered              
+        bin lt                                             30          1          -    Covered              
+        bin ge                                              0          1          -    ZERO                 
+        bin ltu                                             0          1          -    ZERO                 
+        bin geu                                             0          1          -    ZERO                 
+    Coverpoint rs1_cp                                  65.62%        100          -    Uncovered            
+        covered/total bins:                                21         32          -                      
+        missing/total bins:                                11         32          -                      
+        % Hit:                                         65.62%        100          -                      
+        bin zero_reg                                      143          1          -    Covered              
+        bin all_regs[1]                                     1          1          -    Covered              
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    28          1          -    Covered              
+        bin all_regs[4]                                     1          1          -    Covered              
+        bin all_regs[5]                                    28          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                     1          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                    28          1          -    Covered              
+        bin all_regs[10]                                   58          1          -    Covered              
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   29          1          -    Covered              
+        bin all_regs[13]                                   57          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                    0          1          -    ZERO                 
+        bin all_regs[16]                                    0          1          -    ZERO                 
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    2          1          -    Covered              
+        bin all_regs[19]                                    1          1          -    Covered              
+        bin all_regs[20]                                   28          1          -    Covered              
+        bin all_regs[21]                                    2          1          -    Covered              
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                   28          1          -    Covered              
+        bin all_regs[24]                                    0          1          -    ZERO                 
+        bin all_regs[25]                                    0          1          -    ZERO                 
+        bin all_regs[26]                                   31          1          -    Covered              
+        bin all_regs[27]                                    2          1          -    Covered              
+        bin all_regs[28]                                    0          1          -    ZERO                 
+        bin all_regs[29]                                   28          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    1          1          -    Covered              
+    Coverpoint rs2_cp                                  59.37%        100          -    Uncovered            
+        covered/total bins:                                19         32          -                      
+        missing/total bins:                                13         32          -                      
+        % Hit:                                         59.37%        100          -                      
+        bin zero_reg                                       31          1          -    Covered              
+        bin all_regs[1]                                     0          1          -    ZERO                 
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    29          1          -    Covered              
+        bin all_regs[4]                                    28          1          -    Covered              
+        bin all_regs[5]                                     0          1          -    ZERO                 
+        bin all_regs[6]                                     0          1          -    ZERO                 
+        bin all_regs[7]                                     0          1          -    ZERO                 
+        bin all_regs[8]                                     3          1          -    Covered              
+        bin all_regs[9]                                     0          1          -    ZERO                 
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   85          1          -    Covered              
+        bin all_regs[13]                                    2          1          -    Covered              
+        bin all_regs[14]                                    1          1          -    Covered              
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                  113          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    1          1          -    Covered              
+        bin all_regs[19]                                    0          1          -    ZERO                 
+        bin all_regs[20]                                    2          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                   28          1          -    Covered              
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   85          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                    0          1          -    ZERO                 
+        bin all_regs[27]                                    1          1          -    Covered              
+        bin all_regs[28]                                    3          1          -    Covered              
+        bin all_regs[29]                                   29          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint rd_cp                                   62.50%        100          -    Uncovered            
+        covered/total bins:                                20         32          -                      
+        missing/total bins:                                12         32          -                      
+        % Hit:                                         62.50%        100          -                      
+        bin zero_reg                                      112          1          -    Covered              
+        bin all_regs[1]                                    28          1          -    Covered              
+        bin all_regs[2]                                     0          1          -    ZERO                 
+        bin all_regs[3]                                     0          1          -    ZERO                 
+        bin all_regs[4]                                    30          1          -    Covered              
+        bin all_regs[5]                                     1          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                    28          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                     1          1          -    Covered              
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    1          1          -    Covered              
+        bin all_regs[12]                                   33          1          -    Covered              
+        bin all_regs[13]                                   56          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                    3          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    0          1          -    ZERO                 
+        bin all_regs[19]                                   28          1          -    Covered              
+        bin all_regs[20]                                   30          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   58          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                   30          1          -    Covered              
+        bin all_regs[27]                                    0          1          -    ZERO                 
+        bin all_regs[28]                                    1          1          -    Covered              
+        bin all_regs[29]                                    1          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint mem_read_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                           60          1          -    Covered              
+    Coverpoint reg_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                          150          1          -    Covered              
+        bin write                                         349          1          -    Covered              
+    Coverpoint mem_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write                                         118          1          -    Covered              
+    Coverpoint write_from_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu_wb                                        268          1          -    Covered              
+        bin mem_wb                                         60          1          -    Covered              
+        bin pc4_wb                                        171          1          -    Covered              
+    Coverpoint pc_select_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pc_plus4                                      300          1          -    Covered              
+        bin branch_pc                                     171          1          -    Covered              
+        bin jump_pc                                        28          1          -    Covered              
+    Coverpoint zero_flag_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                    498          1          -    Covered              
+    Coverpoint lt_flag_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less                                           28          1          -    Covered              
+        bin not_less                                      471          1          -    Covered              
+    Coverpoint ltu_flag_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less_u                                          1          1          -    Covered              
+        bin not_less_u                                    498          1          -    Covered              
+    Coverpoint imm_cp                                  66.66%        100          -    Uncovered            
+        covered/total bins:                                 2          3          -                      
+        missing/total bins:                                 1          3          -                      
+        % Hit:                                         66.66%        100          -                      
+        bin zero                                           88          1          -    Covered              
+        bin small_pos                                       0          1          -    ZERO                 
+        bin large_pos                                     411          1          -    Covered              
+    Cross opcode_x_writeback                           33.33%        100          -    Uncovered            
+        covered/total bins:                                 7         21          -                      
+        missing/total bins:                                14         21          -                      
+        % Hit:                                         33.33%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,pc4_wb>                              28          1          -    Covered              
+            bin <JAL,pc4_wb>                              143          1          -    Covered              
+            bin <LOAD,mem_wb>                              60          1          -    Covered              
+            bin <BRANCH,alu_wb>                            32          1          -    Covered              
+            bin <STORE,alu_wb>                            118          1          -    Covered              
+            bin <I_TYPE,alu_wb>                            30          1          -    Covered              
+            bin <R_TYPE,alu_wb>                            88          1          -    Covered              
+            bin <BRANCH,pc4_wb>                             0          1          1    ZERO                 
+            bin <STORE,pc4_wb>                              0          1          1    ZERO                 
+            bin <LOAD,pc4_wb>                               0          1          1    ZERO                 
+            bin <I_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <JALR,mem_wb>                               0          1          1    ZERO                 
+            bin <JAL,mem_wb>                                0          1          1    ZERO                 
+            bin <BRANCH,mem_wb>                             0          1          1    ZERO                 
+            bin <STORE,mem_wb>                              0          1          1    ZERO                 
+            bin <I_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <JALR,alu_wb>                               0          1          1    ZERO                 
+            bin <JAL,alu_wb>                                0          1          1    ZERO                 
+            bin <LOAD,alu_wb>                               0          1          1    ZERO                 
+    Cross opcode_x_mem                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          7          -                      
+        missing/total bins:                                 7          7          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          7    ZERO                 
+    Cross opcode_x_reg                                 50.00%        100          -    Uncovered            
+        covered/total bins:                                 7         14          -                      
+        missing/total bins:                                 7         14          -                      
+        % Hit:                                         50.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,write>                               28          1          -    Covered              
+            bin <JAL,write>                               143          1          -    Covered              
+            bin <LOAD,write>                               60          1          -    Covered              
+            bin <I_TYPE,write>                             30          1          -    Covered              
+            bin <R_TYPE,write>                             88          1          -    Covered              
+            bin <BRANCH,read>                              32          1          -    Covered              
+            bin <STORE,read>                              118          1          -    Covered              
+            bin <BRANCH,write>                              0          1          1    ZERO                 
+            bin <STORE,write>                               0          1          1    ZERO                 
+            bin <JALR,read>                                 0          1          1    ZERO                 
+            bin <JAL,read>                                  0          1          1    ZERO                 
+            bin <LOAD,read>                                 0          1          1    ZERO                 
+            bin <I_TYPE,read>                               0          1          1    ZERO                 
+            bin <R_TYPE,read>                               0          1          1    ZERO                 
+    Cross opcode_x_pcselect                            38.09%        100          -    Uncovered            
+        covered/total bins:                                 8         21          -                      
+        missing/total bins:                                13         21          -                      
+        % Hit:                                         38.09%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,jump_pc>                             28          1          -    Covered              
+            bin <JAL,branch_pc>                           143          1          -    Covered              
+            bin <BRANCH,branch_pc>                         28          1          -    Covered              
+            bin <BRANCH,pc_plus4>                           4          1          -    Covered              
+            bin <STORE,pc_plus4>                          118          1          -    Covered              
+            bin <LOAD,pc_plus4>                            60          1          -    Covered              
+            bin <I_TYPE,pc_plus4>                          30          1          -    Covered              
+            bin <R_TYPE,pc_plus4>                          88          1          -    Covered              
+            bin <JAL,jump_pc>                               0          1          1    ZERO                 
+            bin <BRANCH,jump_pc>                            0          1          1    ZERO                 
+            bin <STORE,jump_pc>                             0          1          1    ZERO                 
+            bin <LOAD,jump_pc>                              0          1          1    ZERO                 
+            bin <I_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <R_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <JALR,branch_pc>                            0          1          1    ZERO                 
+            bin <STORE,branch_pc>                           0          1          1    ZERO                 
+            bin <LOAD,branch_pc>                            0          1          1    ZERO                 
+            bin <I_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <R_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <JALR,pc_plus4>                             0          1          1    ZERO                 
+            bin <JAL,pc_plus4>                              0          1          1    ZERO                 
+    Cross opcode_x_alu                                 11.60%        100          -    Uncovered            
+        covered/total bins:                                13        112          -                      
+        missing/total bins:                                99        112          -                      
+        % Hit:                                         11.60%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <BRANCH,lt>                                30          1          -    Covered              
+            bin <BRANCH,ne>                                 1          1          -    Covered              
+            bin <BRANCH,eq>                                 1          1          -    Covered              
+            bin <I_TYPE,sltu>                               1          1          -    Covered              
+            bin <R_TYPE,slt>                                1          1          -    Covered              
+            bin <R_TYPE,sll>                               28          1          -    Covered              
+            bin <I_TYPE,Xor>                               28          1          -    Covered              
+            bin <I_TYPE,Or>                                 1          1          -    Covered              
+            bin <JALR,add>                                 28          1          -    Covered              
+            bin <JAL,add>                                 143          1          -    Covered              
+            bin <STORE,add>                               118          1          -    Covered              
+            bin <LOAD,add>                                 60          1          -    Covered              
+            bin <R_TYPE,add>                               59          1          -    Covered              
+            bin <*,geu>                                     0          1          7    ZERO                 
+            bin <*,ltu>                                     0          1          7    ZERO                 
+            bin <*,ge>                                      0          1          7    ZERO                 
+            bin <*,sra>                                     0          1          7    ZERO                 
+            bin <*,srl>                                     0          1          7    ZERO                 
+            bin <*,And>                                     0          1          7    ZERO                 
+            bin <*,sub>                                     0          1          7    ZERO                 
+            bin <JALR,lt>                                   0          1          1    ZERO                 
+            bin <JAL,lt>                                    0          1          1    ZERO                 
+            bin <STORE,lt>                                  0          1          1    ZERO                 
+            bin <LOAD,lt>                                   0          1          1    ZERO                 
+            bin <I_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <R_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <JALR,ne>                                   0          1          1    ZERO                 
+            bin <JAL,ne>                                    0          1          1    ZERO                 
+            bin <STORE,ne>                                  0          1          1    ZERO                 
+            bin <LOAD,ne>                                   0          1          1    ZERO                 
+            bin <I_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <R_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <JALR,eq>                                   0          1          1    ZERO                 
+            bin <JAL,eq>                                    0          1          1    ZERO                 
+            bin <STORE,eq>                                  0          1          1    ZERO                 
+            bin <LOAD,eq>                                   0          1          1    ZERO                 
+            bin <I_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <R_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <JALR,sltu>                                 0          1          1    ZERO                 
+            bin <JAL,sltu>                                  0          1          1    ZERO                 
+            bin <BRANCH,sltu>                               0          1          1    ZERO                 
+            bin <STORE,sltu>                                0          1          1    ZERO                 
+            bin <LOAD,sltu>                                 0          1          1    ZERO                 
+            bin <R_TYPE,sltu>                               0          1          1    ZERO                 
+            bin <JALR,slt>                                  0          1          1    ZERO                 
+            bin <JAL,slt>                                   0          1          1    ZERO                 
+            bin <BRANCH,slt>                                0          1          1    ZERO                 
+            bin <STORE,slt>                                 0          1          1    ZERO                 
+            bin <LOAD,slt>                                  0          1          1    ZERO                 
+            bin <I_TYPE,slt>                                0          1          1    ZERO                 
+            bin <JALR,sll>                                  0          1          1    ZERO                 
+            bin <JAL,sll>                                   0          1          1    ZERO                 
+            bin <BRANCH,sll>                                0          1          1    ZERO                 
+            bin <STORE,sll>                                 0          1          1    ZERO                 
+            bin <LOAD,sll>                                  0          1          1    ZERO                 
+            bin <I_TYPE,sll>                                0          1          1    ZERO                 
+            bin <JALR,Xor>                                  0          1          1    ZERO                 
+            bin <JAL,Xor>                                   0          1          1    ZERO                 
+            bin <BRANCH,Xor>                                0          1          1    ZERO                 
+            bin <STORE,Xor>                                 0          1          1    ZERO                 
+            bin <LOAD,Xor>                                  0          1          1    ZERO                 
+            bin <R_TYPE,Xor>                                0          1          1    ZERO                 
+            bin <JALR,Or>                                   0          1          1    ZERO                 
+            bin <JAL,Or>                                    0          1          1    ZERO                 
+            bin <BRANCH,Or>                                 0          1          1    ZERO                 
+            bin <STORE,Or>                                  0          1          1    ZERO                 
+            bin <LOAD,Or>                                   0          1          1    ZERO                 
+            bin <R_TYPE,Or>                                 0          1          1    ZERO                 
+            bin <BRANCH,add>                                0          1          1    ZERO                 
+            bin <I_TYPE,add>                                0          1          1    ZERO                 
+ Covergroup instance riscv                             68.28%        100          -    Uncovered            
+    covered/total bins:                                   138        385          -                      
+    missing/total bins:                                   247        385          -                      
+    % Hit:                                             35.84%        100          -                      
+    Coverpoint opcode_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin R_TYPE                                         88          1          -    Covered              
+        bin I_TYPE                                         30          1          -    Covered              
+        bin LOAD                                           60          1          -    Covered              
+        bin STORE                                         118          1          -    Covered              
+        bin BRANCH                                         32          1          -    Covered              
+        bin JAL                                           143          1          -    Covered              
+        bin JALR                                           28          1          -    Covered              
+    Coverpoint funct3_cp                               87.50%        100          -    Uncovered            
+        covered/total bins:                                 7          8          -                      
+        missing/total bins:                                 1          8          -                      
+        % Hit:                                         87.50%        100          -                      
+        bin auto[0]                                       146          1          -    Covered              
+        bin auto[1]                                       114          1          -    Covered              
+        bin auto[2]                                        88          1          -    Covered              
+        bin auto[3]                                         2          1          -    Covered              
+        bin auto[4]                                       115          1          -    Covered              
+        bin auto[5]                                         2          1          -    Covered              
+        bin auto[6]                                        32          1          -    Covered              
+        bin auto[7]                                         0          1          -    ZERO                 
+    Coverpoint funct7_cp                                3.12%        100          -    Uncovered            
+        covered/total bins:                                 2         64          -                      
+        missing/total bins:                                62         64          -                      
+        % Hit:                                          3.12%        100          -                      
+        bin auto[0:1]                                     238          1          -    Covered              
+        bin auto[2:3]                                     261          1          -    Covered              
+        bin auto[4:5]                                       0          1          -    ZERO                 
+        bin auto[6:7]                                       0          1          -    ZERO                 
+        bin auto[8:9]                                       0          1          -    ZERO                 
+        bin auto[10:11]                                     0          1          -    ZERO                 
+        bin auto[12:13]                                     0          1          -    ZERO                 
+        bin auto[14:15]                                     0          1          -    ZERO                 
+        bin auto[16:17]                                     0          1          -    ZERO                 
+        bin auto[18:19]                                     0          1          -    ZERO                 
+        bin auto[20:21]                                     0          1          -    ZERO                 
+        bin auto[22:23]                                     0          1          -    ZERO                 
+        bin auto[24:25]                                     0          1          -    ZERO                 
+        bin auto[26:27]                                     0          1          -    ZERO                 
+        bin auto[28:29]                                     0          1          -    ZERO                 
+        bin auto[30:31]                                     0          1          -    ZERO                 
+        bin auto[32:33]                                     0          1          -    ZERO                 
+        bin auto[34:35]                                     0          1          -    ZERO                 
+        bin auto[36:37]                                     0          1          -    ZERO                 
+        bin auto[38:39]                                     0          1          -    ZERO                 
+        bin auto[40:41]                                     0          1          -    ZERO                 
+        bin auto[42:43]                                     0          1          -    ZERO                 
+        bin auto[44:45]                                     0          1          -    ZERO                 
+        bin auto[46:47]                                     0          1          -    ZERO                 
+        bin auto[48:49]                                     0          1          -    ZERO                 
+        bin auto[50:51]                                     0          1          -    ZERO                 
+        bin auto[52:53]                                     0          1          -    ZERO                 
+        bin auto[54:55]                                     0          1          -    ZERO                 
+        bin auto[56:57]                                     0          1          -    ZERO                 
+        bin auto[58:59]                                     0          1          -    ZERO                 
+        bin auto[60:61]                                     0          1          -    ZERO                 
+        bin auto[62:63]                                     0          1          -    ZERO                 
+        bin auto[64:65]                                     0          1          -    ZERO                 
+        bin auto[66:67]                                     0          1          -    ZERO                 
+        bin auto[68:69]                                     0          1          -    ZERO                 
+        bin auto[70:71]                                     0          1          -    ZERO                 
+        bin auto[72:73]                                     0          1          -    ZERO                 
+        bin auto[74:75]                                     0          1          -    ZERO                 
+        bin auto[76:77]                                     0          1          -    ZERO                 
+        bin auto[78:79]                                     0          1          -    ZERO                 
+        bin auto[80:81]                                     0          1          -    ZERO                 
+        bin auto[82:83]                                     0          1          -    ZERO                 
+        bin auto[84:85]                                     0          1          -    ZERO                 
+        bin auto[86:87]                                     0          1          -    ZERO                 
+        bin auto[88:89]                                     0          1          -    ZERO                 
+        bin auto[90:91]                                     0          1          -    ZERO                 
+        bin auto[92:93]                                     0          1          -    ZERO                 
+        bin auto[94:95]                                     0          1          -    ZERO                 
+        bin auto[96:97]                                     0          1          -    ZERO                 
+        bin auto[98:99]                                     0          1          -    ZERO                 
+        bin auto[100:101]                                   0          1          -    ZERO                 
+        bin auto[102:103]                                   0          1          -    ZERO                 
+        bin auto[104:105]                                   0          1          -    ZERO                 
+        bin auto[106:107]                                   0          1          -    ZERO                 
+        bin auto[108:109]                                   0          1          -    ZERO                 
+        bin auto[110:111]                                   0          1          -    ZERO                 
+        bin auto[112:113]                                   0          1          -    ZERO                 
+        bin auto[114:115]                                   0          1          -    ZERO                 
+        bin auto[116:117]                                   0          1          -    ZERO                 
+        bin auto[118:119]                                   0          1          -    ZERO                 
+        bin auto[120:121]                                   0          1          -    ZERO                 
+        bin auto[122:123]                                   0          1          -    ZERO                 
+        bin auto[124:125]                                   0          1          -    ZERO                 
+        bin auto[126:127]                                   0          1          -    ZERO                 
+    Coverpoint alu_opcode_cp                           56.25%        100          -    Uncovered            
+        covered/total bins:                                 9         16          -                      
+        missing/total bins:                                 7         16          -                      
+        % Hit:                                         56.25%        100          -                      
+        bin add                                           408          1          -    Covered              
+        bin sub                                             0          1          -    ZERO                 
+        bin And                                             0          1          -    ZERO                 
+        bin Or                                              1          1          -    Covered              
+        bin Xor                                            28          1          -    Covered              
+        bin sll                                            28          1          -    Covered              
+        bin srl                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin slt                                             1          1          -    Covered              
+        bin sltu                                            1          1          -    Covered              
+        bin eq                                              1          1          -    Covered              
+        bin ne                                              1          1          -    Covered              
+        bin lt                                             30          1          -    Covered              
+        bin ge                                              0          1          -    ZERO                 
+        bin ltu                                             0          1          -    ZERO                 
+        bin geu                                             0          1          -    ZERO                 
+    Coverpoint rs1_cp                                  65.62%        100          -    Uncovered            
+        covered/total bins:                                21         32          -                      
+        missing/total bins:                                11         32          -                      
+        % Hit:                                         65.62%        100          -                      
+        bin zero_reg                                      143          1          -    Covered              
+        bin all_regs[1]                                     1          1          -    Covered              
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    28          1          -    Covered              
+        bin all_regs[4]                                     1          1          -    Covered              
+        bin all_regs[5]                                    28          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                     1          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                    28          1          -    Covered              
+        bin all_regs[10]                                   58          1          -    Covered              
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   29          1          -    Covered              
+        bin all_regs[13]                                   57          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                    0          1          -    ZERO                 
+        bin all_regs[16]                                    0          1          -    ZERO                 
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    2          1          -    Covered              
+        bin all_regs[19]                                    1          1          -    Covered              
+        bin all_regs[20]                                   28          1          -    Covered              
+        bin all_regs[21]                                    2          1          -    Covered              
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                   28          1          -    Covered              
+        bin all_regs[24]                                    0          1          -    ZERO                 
+        bin all_regs[25]                                    0          1          -    ZERO                 
+        bin all_regs[26]                                   31          1          -    Covered              
+        bin all_regs[27]                                    2          1          -    Covered              
+        bin all_regs[28]                                    0          1          -    ZERO                 
+        bin all_regs[29]                                   28          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    1          1          -    Covered              
+    Coverpoint rs2_cp                                  59.37%        100          -    Uncovered            
+        covered/total bins:                                19         32          -                      
+        missing/total bins:                                13         32          -                      
+        % Hit:                                         59.37%        100          -                      
+        bin zero_reg                                       31          1          -    Covered              
+        bin all_regs[1]                                     0          1          -    ZERO                 
+        bin all_regs[2]                                     1          1          -    Covered              
+        bin all_regs[3]                                    29          1          -    Covered              
+        bin all_regs[4]                                    28          1          -    Covered              
+        bin all_regs[5]                                     0          1          -    ZERO                 
+        bin all_regs[6]                                     0          1          -    ZERO                 
+        bin all_regs[7]                                     0          1          -    ZERO                 
+        bin all_regs[8]                                     3          1          -    Covered              
+        bin all_regs[9]                                     0          1          -    ZERO                 
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    0          1          -    ZERO                 
+        bin all_regs[12]                                   85          1          -    Covered              
+        bin all_regs[13]                                    2          1          -    Covered              
+        bin all_regs[14]                                    1          1          -    Covered              
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                  113          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    1          1          -    Covered              
+        bin all_regs[19]                                    0          1          -    ZERO                 
+        bin all_regs[20]                                    2          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                   28          1          -    Covered              
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   85          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                    0          1          -    ZERO                 
+        bin all_regs[27]                                    1          1          -    Covered              
+        bin all_regs[28]                                    3          1          -    Covered              
+        bin all_regs[29]                                   29          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint rd_cp                                   62.50%        100          -    Uncovered            
+        covered/total bins:                                20         32          -                      
+        missing/total bins:                                12         32          -                      
+        % Hit:                                         62.50%        100          -                      
+        bin zero_reg                                      112          1          -    Covered              
+        bin all_regs[1]                                    28          1          -    Covered              
+        bin all_regs[2]                                     0          1          -    ZERO                 
+        bin all_regs[3]                                     0          1          -    ZERO                 
+        bin all_regs[4]                                    30          1          -    Covered              
+        bin all_regs[5]                                     1          1          -    Covered              
+        bin all_regs[6]                                     1          1          -    Covered              
+        bin all_regs[7]                                    28          1          -    Covered              
+        bin all_regs[8]                                     0          1          -    ZERO                 
+        bin all_regs[9]                                     1          1          -    Covered              
+        bin all_regs[10]                                    0          1          -    ZERO                 
+        bin all_regs[11]                                    1          1          -    Covered              
+        bin all_regs[12]                                   33          1          -    Covered              
+        bin all_regs[13]                                   56          1          -    Covered              
+        bin all_regs[14]                                    0          1          -    ZERO                 
+        bin all_regs[15]                                   28          1          -    Covered              
+        bin all_regs[16]                                    3          1          -    Covered              
+        bin all_regs[17]                                    0          1          -    ZERO                 
+        bin all_regs[18]                                    0          1          -    ZERO                 
+        bin all_regs[19]                                   28          1          -    Covered              
+        bin all_regs[20]                                   30          1          -    Covered              
+        bin all_regs[21]                                    0          1          -    ZERO                 
+        bin all_regs[22]                                    0          1          -    ZERO                 
+        bin all_regs[23]                                    1          1          -    Covered              
+        bin all_regs[24]                                   58          1          -    Covered              
+        bin all_regs[25]                                   28          1          -    Covered              
+        bin all_regs[26]                                   30          1          -    Covered              
+        bin all_regs[27]                                    0          1          -    ZERO                 
+        bin all_regs[28]                                    1          1          -    Covered              
+        bin all_regs[29]                                    1          1          -    Covered              
+        bin all_regs[30]                                    0          1          -    ZERO                 
+        bin all_regs[31]                                    0          1          -    ZERO                 
+    Coverpoint mem_read_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                           60          1          -    Covered              
+    Coverpoint reg_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read                                          150          1          -    Covered              
+        bin write                                         349          1          -    Covered              
+    Coverpoint mem_write_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write                                         118          1          -    Covered              
+    Coverpoint write_from_cp                          100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin alu_wb                                        268          1          -    Covered              
+        bin mem_wb                                         60          1          -    Covered              
+        bin pc4_wb                                        171          1          -    Covered              
+    Coverpoint pc_select_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin pc_plus4                                      300          1          -    Covered              
+        bin branch_pc                                     171          1          -    Covered              
+        bin jump_pc                                        28          1          -    Covered              
+    Coverpoint zero_flag_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                    498          1          -    Covered              
+    Coverpoint lt_flag_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less                                           28          1          -    Covered              
+        bin not_less                                      471          1          -    Covered              
+    Coverpoint ltu_flag_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin less_u                                          1          1          -    Covered              
+        bin not_less_u                                    498          1          -    Covered              
+    Coverpoint imm_cp                                  66.66%        100          -    Uncovered            
+        covered/total bins:                                 2          3          -                      
+        missing/total bins:                                 1          3          -                      
+        % Hit:                                         66.66%        100          -                      
+        bin zero                                           88          1          -    Covered              
+        bin small_pos                                       0          1          -    ZERO                 
+        bin large_pos                                     411          1          -    Covered              
+    Cross opcode_x_writeback                           33.33%        100          -    Uncovered            
+        covered/total bins:                                 7         21          -                      
+        missing/total bins:                                14         21          -                      
+        % Hit:                                         33.33%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,pc4_wb>                              28          1          -    Covered              
+            bin <JAL,pc4_wb>                              143          1          -    Covered              
+            bin <LOAD,mem_wb>                              60          1          -    Covered              
+            bin <BRANCH,alu_wb>                            32          1          -    Covered              
+            bin <STORE,alu_wb>                            118          1          -    Covered              
+            bin <I_TYPE,alu_wb>                            30          1          -    Covered              
+            bin <R_TYPE,alu_wb>                            88          1          -    Covered              
+            bin <BRANCH,pc4_wb>                             0          1          1    ZERO                 
+            bin <STORE,pc4_wb>                              0          1          1    ZERO                 
+            bin <LOAD,pc4_wb>                               0          1          1    ZERO                 
+            bin <I_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,pc4_wb>                             0          1          1    ZERO                 
+            bin <JALR,mem_wb>                               0          1          1    ZERO                 
+            bin <JAL,mem_wb>                                0          1          1    ZERO                 
+            bin <BRANCH,mem_wb>                             0          1          1    ZERO                 
+            bin <STORE,mem_wb>                              0          1          1    ZERO                 
+            bin <I_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <R_TYPE,mem_wb>                             0          1          1    ZERO                 
+            bin <JALR,alu_wb>                               0          1          1    ZERO                 
+            bin <JAL,alu_wb>                                0          1          1    ZERO                 
+            bin <LOAD,alu_wb>                               0          1          1    ZERO                 
+    Cross opcode_x_mem                                  0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          7          -                      
+        missing/total bins:                                 7          7          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          7    ZERO                 
+    Cross opcode_x_reg                                 50.00%        100          -    Uncovered            
+        covered/total bins:                                 7         14          -                      
+        missing/total bins:                                 7         14          -                      
+        % Hit:                                         50.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,write>                               28          1          -    Covered              
+            bin <JAL,write>                               143          1          -    Covered              
+            bin <LOAD,write>                               60          1          -    Covered              
+            bin <I_TYPE,write>                             30          1          -    Covered              
+            bin <R_TYPE,write>                             88          1          -    Covered              
+            bin <BRANCH,read>                              32          1          -    Covered              
+            bin <STORE,read>                              118          1          -    Covered              
+            bin <BRANCH,write>                              0          1          1    ZERO                 
+            bin <STORE,write>                               0          1          1    ZERO                 
+            bin <JALR,read>                                 0          1          1    ZERO                 
+            bin <JAL,read>                                  0          1          1    ZERO                 
+            bin <LOAD,read>                                 0          1          1    ZERO                 
+            bin <I_TYPE,read>                               0          1          1    ZERO                 
+            bin <R_TYPE,read>                               0          1          1    ZERO                 
+    Cross opcode_x_pcselect                            38.09%        100          -    Uncovered            
+        covered/total bins:                                 8         21          -                      
+        missing/total bins:                                13         21          -                      
+        % Hit:                                         38.09%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <JALR,jump_pc>                             28          1          -    Covered              
+            bin <JAL,branch_pc>                           143          1          -    Covered              
+            bin <BRANCH,branch_pc>                         28          1          -    Covered              
+            bin <BRANCH,pc_plus4>                           4          1          -    Covered              
+            bin <STORE,pc_plus4>                          118          1          -    Covered              
+            bin <LOAD,pc_plus4>                            60          1          -    Covered              
+            bin <I_TYPE,pc_plus4>                          30          1          -    Covered              
+            bin <R_TYPE,pc_plus4>                          88          1          -    Covered              
+            bin <JAL,jump_pc>                               0          1          1    ZERO                 
+            bin <BRANCH,jump_pc>                            0          1          1    ZERO                 
+            bin <STORE,jump_pc>                             0          1          1    ZERO                 
+            bin <LOAD,jump_pc>                              0          1          1    ZERO                 
+            bin <I_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <R_TYPE,jump_pc>                            0          1          1    ZERO                 
+            bin <JALR,branch_pc>                            0          1          1    ZERO                 
+            bin <STORE,branch_pc>                           0          1          1    ZERO                 
+            bin <LOAD,branch_pc>                            0          1          1    ZERO                 
+            bin <I_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <R_TYPE,branch_pc>                          0          1          1    ZERO                 
+            bin <JALR,pc_plus4>                             0          1          1    ZERO                 
+            bin <JAL,pc_plus4>                              0          1          1    ZERO                 
+    Cross opcode_x_alu                                 11.60%        100          -    Uncovered            
+        covered/total bins:                                13        112          -                      
+        missing/total bins:                                99        112          -                      
+        % Hit:                                         11.60%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <BRANCH,lt>                                30          1          -    Covered              
+            bin <BRANCH,ne>                                 1          1          -    Covered              
+            bin <BRANCH,eq>                                 1          1          -    Covered              
+            bin <I_TYPE,sltu>                               1          1          -    Covered              
+            bin <R_TYPE,slt>                                1          1          -    Covered              
+            bin <R_TYPE,sll>                               28          1          -    Covered              
+            bin <I_TYPE,Xor>                               28          1          -    Covered              
+            bin <I_TYPE,Or>                                 1          1          -    Covered              
+            bin <JALR,add>                                 28          1          -    Covered              
+            bin <JAL,add>                                 143          1          -    Covered              
+            bin <STORE,add>                               118          1          -    Covered              
+            bin <LOAD,add>                                 60          1          -    Covered              
+            bin <R_TYPE,add>                               59          1          -    Covered              
+            bin <*,geu>                                     0          1          7    ZERO                 
+            bin <*,ltu>                                     0          1          7    ZERO                 
+            bin <*,ge>                                      0          1          7    ZERO                 
+            bin <*,sra>                                     0          1          7    ZERO                 
+            bin <*,srl>                                     0          1          7    ZERO                 
+            bin <*,And>                                     0          1          7    ZERO                 
+            bin <*,sub>                                     0          1          7    ZERO                 
+            bin <JALR,lt>                                   0          1          1    ZERO                 
+            bin <JAL,lt>                                    0          1          1    ZERO                 
+            bin <STORE,lt>                                  0          1          1    ZERO                 
+            bin <LOAD,lt>                                   0          1          1    ZERO                 
+            bin <I_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <R_TYPE,lt>                                 0          1          1    ZERO                 
+            bin <JALR,ne>                                   0          1          1    ZERO                 
+            bin <JAL,ne>                                    0          1          1    ZERO                 
+            bin <STORE,ne>                                  0          1          1    ZERO                 
+            bin <LOAD,ne>                                   0          1          1    ZERO                 
+            bin <I_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <R_TYPE,ne>                                 0          1          1    ZERO                 
+            bin <JALR,eq>                                   0          1          1    ZERO                 
+            bin <JAL,eq>                                    0          1          1    ZERO                 
+            bin <STORE,eq>                                  0          1          1    ZERO                 
+            bin <LOAD,eq>                                   0          1          1    ZERO                 
+            bin <I_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <R_TYPE,eq>                                 0          1          1    ZERO                 
+            bin <JALR,sltu>                                 0          1          1    ZERO                 
+            bin <JAL,sltu>                                  0          1          1    ZERO                 
+            bin <BRANCH,sltu>                               0          1          1    ZERO                 
+            bin <STORE,sltu>                                0          1          1    ZERO                 
+            bin <LOAD,sltu>                                 0          1          1    ZERO                 
+            bin <R_TYPE,sltu>                               0          1          1    ZERO                 
+            bin <JALR,slt>                                  0          1          1    ZERO                 
+            bin <JAL,slt>                                   0          1          1    ZERO                 
+            bin <BRANCH,slt>                                0          1          1    ZERO                 
+            bin <STORE,slt>                                 0          1          1    ZERO                 
+            bin <LOAD,slt>                                  0          1          1    ZERO                 
+            bin <I_TYPE,slt>                                0          1          1    ZERO                 
+            bin <JALR,sll>                                  0          1          1    ZERO                 
+            bin <JAL,sll>                                   0          1          1    ZERO                 
+            bin <BRANCH,sll>                                0          1          1    ZERO                 
+            bin <STORE,sll>                                 0          1          1    ZERO                 
+            bin <LOAD,sll>                                  0          1          1    ZERO                 
+            bin <I_TYPE,sll>                                0          1          1    ZERO                 
+            bin <JALR,Xor>                                  0          1          1    ZERO                 
+            bin <JAL,Xor>                                   0          1          1    ZERO                 
+            bin <BRANCH,Xor>                                0          1          1    ZERO                 
+            bin <STORE,Xor>                                 0          1          1    ZERO                 
+            bin <LOAD,Xor>                                  0          1          1    ZERO                 
+            bin <R_TYPE,Xor>                                0          1          1    ZERO                 
+            bin <JALR,Or>                                   0          1          1    ZERO                 
+            bin <JAL,Or>                                    0          1          1    ZERO                 
+            bin <BRANCH,Or>                                 0          1          1    ZERO                 
+            bin <STORE,Or>                                  0          1          1    ZERO                 
+            bin <LOAD,Or>                                   0          1          1    ZERO                 
+            bin <R_TYPE,Or>                                 0          1          1    ZERO                 
+            bin <BRANCH,add>                                0          1          1    ZERO                 
+            bin <I_TYPE,add>                                0          1          1    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 68.28%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 68.28%
+
