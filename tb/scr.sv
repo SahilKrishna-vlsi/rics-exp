@@ -7,18 +7,75 @@ class risc_scr extends uvm_scoreboard;
   data_pkt iop;
   int pass_count;
   int fail_count;
-  int j = 100;
+  int j = 500;
   logic [31:0] ref_mem[0:1023];
   reg [31:0] ref_reg[31:0];
+
+  covergroup riscv_cg with function sample (data_pkt pkt);
+    option.per_instance = 1;
+    option.name = "riscv";
+
+    opcode_cp: coverpoint pkt.inst[6:0] {
+      bins R_TYPE = {7'b0110011};
+      bins I_TYPE = {7'b0010011};
+      bins LOAD = {7'b0000011};
+      bins STORE = {7'b0100011};
+      bins BRANCH = {7'b1100011};
+      bins JAL = {7'b1101111};
+      bins JALR = {7'b1100111};
+    }
+    funct3_cp: coverpoint pkt.inst[14:12];
+    funct7_cp: coverpoint pkt.inst[31:25];
+    alu_opcode_cp: coverpoint pkt.alu_opcode {
+      bins add = {ADD};
+      bins sub = {SUB};
+      bins And = {AND};
+      bins Or = {OR};
+      bins Xor = {XOR};
+      bins sll = {SLL};
+      bins srl = {SRL};
+      bins sra = {SRA};
+      bins slt = {SLT};
+      bins sltu = {SLTU};
+      bins eq = {EQ};
+      bins ne = {NE};
+      bins lt = {LT};
+      bins ge = {GE};
+      bins ltu = {LTU};
+      bins geu = {GEU};
+    }
+    rs1_cp: coverpoint pkt.inst[19:15] {bins zero_reg = {0}; bins all_regs[] = {[1 : 31]};}
+    rs2_cp: coverpoint pkt.inst[24:20] {bins zero_reg = {0}; bins all_regs[] = {[1 : 31]};}
+    rd_cp: coverpoint pkt.inst[11:7] {bins zero_reg = {0}; bins all_regs[] = {[1 : 31]};}
+    mem_read_cp: coverpoint pkt.mem_read {bins read = {1};}
+    reg_write_cp: coverpoint pkt.reg_write {bins read = {0}; bins write = {1};}
+    mem_write_cp: coverpoint pkt.mem_write {bins write = {1};}
+    write_from_cp: coverpoint pkt.write_from {
+      bins alu_wb = {2'b00}; bins mem_wb = {2'b01}; bins pc4_wb = {2'b10};
+    }
+    pc_select_cp: coverpoint pkt.pc_select {
+      bins pc_plus4 = {0}; bins branch_pc = {1}; bins jump_pc = {2};
+    }
+    zero_flag_cp: coverpoint pkt.z_flag {bins zero_set = {1}; bins zero_clear = {0};}
+    lt_flag_cp: coverpoint pkt.lt_flag {bins less = {1}; bins not_less = {0};}
+    ltu_flag_cp: coverpoint pkt.ltu_flag {bins less_u = {1}; bins not_less_u = {0};}
+    imm_cp: coverpoint pkt.offset {
+      bins zero = {0}; bins small_pos = {[1 : 15]}; bins large_pos = {[16 : 2047]};
+    }
+    opcode_x_writeback : cross opcode_cp, write_from_cp;
+    opcode_x_mem : cross opcode_cp, mem_read_cp, mem_write_cp;
+    opcode_x_reg : cross opcode_cp, reg_write_cp;
+    opcode_x_pcselect : cross opcode_cp, pc_select_cp;
+    opcode_x_alu : cross opcode_cp, alu_opcode_cp;
+  endgroup
 
   function new(string name = "risc_scr", uvm_component parent = null);
     super.new(name, parent);
     pass_count = 0;
     fail_count = 0;
-    pc = 0;
+    riscv_cg   = new();
     foreach (ref_mem[i]) ref_mem[i] = i;
     foreach (ref_reg[i]) ref_reg[i] = 0;
-    //cvg = new();
   endfunction
 
   function void build_phase(uvm_phase phase);
@@ -49,6 +106,7 @@ class risc_scr extends uvm_scoreboard;
     `uvm_info("SB_pri", $sformatf("mem data %h", t.mem_data), UVM_LOW)
     `uvm_info("SB_pri", $sformatf("alu opcode %s", t.alu_opcode.name), UVM_LOW)
   endfunction
+
   function void print_detail_exp();
     `uvm_info("SB_pri", "Expected values", UVM_LOW)
     `uvm_info("SB_pri", $sformatf("pc => %h", exp.pc), UVM_LOW)
@@ -80,9 +138,11 @@ class risc_scr extends uvm_scoreboard;
           if (exp.lt_flag == t.lt_flag && t.alu_opcode.name == SLT) begin
             pass_count++;
             `uvm_info("SB_PASS", "R-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
           end else if (exp.ltu_flag == t.ltu_flag && t.alu_opcode.name == SLTU) begin
             pass_count++;
             `uvm_info("SB_PASS", "R-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
           end else begin
             fail_count++;
             `uvm_info("SB_FAIL", "R-Type Instruction failed", UVM_LOW)
@@ -95,6 +155,7 @@ class risc_scr extends uvm_scoreboard;
         else if(exp.alu_result == t.alu_result && exp.alu_opcode == t.alu_opcode && ref_reg[exp.inst[11:7]] == register[t.inst[11:7]]) begin
           pass_count++;
           `uvm_info("SB_PASS", "R-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "R-Type Instruction failed", UVM_LOW)
@@ -116,9 +177,11 @@ class risc_scr extends uvm_scoreboard;
           if (exp.lt_flag == t.lt_flag && t.alu_opcode.name == SLT) begin
             pass_count++;
             `uvm_info("SB_PASS", "I-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
           end else if (exp.ltu_flag == t.ltu_flag && t.alu_opcode.name == SLTU) begin
             pass_count++;
             `uvm_info("SB_PASS", "I-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
           end else begin
             fail_count++;
             `uvm_info("SB_FAIL", "I-Type Instruction failed", UVM_LOW)
@@ -131,6 +194,7 @@ class risc_scr extends uvm_scoreboard;
       else if(exp.alu_result == t.alu_result && exp.alu_opcode == t.alu_opcode && ref_reg[exp.inst[11:7]] == register[t.inst[11:7]]) begin
           pass_count++;
           `uvm_info("SB_PASS", "I-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "I-Type Instruction failed", UVM_LOW)
@@ -152,6 +216,7 @@ class risc_scr extends uvm_scoreboard;
         if (exp.write_data == t.write_data && exp.alu_opcode == t.alu_opcode && da_mem[t.alu_result]==ref_mem[exp.alu_result]) begin
           pass_count++;
           `uvm_info("SB_PASS", "L-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "L-Type Instruction failed", UVM_LOW)
@@ -174,6 +239,7 @@ class risc_scr extends uvm_scoreboard;
         if (exp.write_data == t.write_data && da_mem[t.alu_result[31:2]] == ref_mem[exp.alu_result[31:2]]) begin
           pass_count++;
           `uvm_info("SB_PASS", "S-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "S-Type Instruction failed", UVM_LOW)
@@ -193,6 +259,7 @@ class risc_scr extends uvm_scoreboard;
         if (exp.pc_select == t.pc_select && exp.pc_4 == t.pc_4) begin
           pass_count++;
           `uvm_info("SB_PASS", "B-Type instruction Passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "B-Type Instruction Failed", UVM_LOW)
@@ -200,6 +267,46 @@ class risc_scr extends uvm_scoreboard;
           `uvm_info("SB_pri", $sformatf("exp.pc_select %d", exp.pc_select), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.pc_4 %h", t.pc_4), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.pc_4 %h", exp.pc_4), UVM_LOW)
+          print_detail_exp();
+          print_details(t);
+        end
+      end
+      7'h67: begin
+        if (exp.pc_select == t.pc_select && exp.pc_4 == t.pc_4 && ref_reg[exp.inst[11:7]]==register[t.inst[11:7]]) begin
+          pass_count++;
+          `uvm_info("SB_PASS", "JALR-Type instruction Passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+        end else begin
+          fail_count++;
+          `uvm_info("SB_FAIL", "JALR-Type Instruction Failed", UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("t.pc_select %d", t.pc_select), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("exp.pc_select %d", exp.pc_select), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("t.pc_4 %h", t.pc_4), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("exp.pc_4 %h", exp.pc_4), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf(
+                    "ref_reg[inst[11:7]: %h] %h", exp.inst[11:7], ref_reg[exp.inst[11:7]]), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf(
+                    "register[inst[11:7]: %h] %h", t.inst[11:7], register[t.inst[11:7]]), UVM_LOW)
+          print_detail_exp();
+          print_details(t);
+        end
+      end
+      7'h6f: begin
+        if (exp.pc_select == t.pc_select && exp.pc_4 == t.pc_4 && ref_reg[exp.inst[11:7]]==register[t.inst[11:7]]) begin
+          pass_count++;
+          `uvm_info("SB_PASS", "JAL-Type instruction Passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+        end else begin
+          fail_count++;
+          `uvm_info("SB_FAIL", "JAL-Type Instruction Failed", UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("t.pc_select %d", t.pc_select), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("exp.pc_select %d", exp.pc_select), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("t.pc_4 %h", t.pc_4), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf("exp.pc_4 %h", exp.pc_4), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf(
+                    "ref_reg[inst[11:7]: %h] %h", exp.inst[11:7], ref_reg[exp.inst[11:7]]), UVM_LOW)
+          `uvm_info("SB_pri", $sformatf(
+                    "register[inst[11:7]: %h] %h", t.inst[11:7], register[t.inst[11:7]]), UVM_LOW)
           print_detail_exp();
           print_details(t);
         end
@@ -359,20 +466,53 @@ class risc_scr extends uvm_scoreboard;
           3'b110: begin
             exp.alu_opcode = LTU;
             exp.ltu_flag   = (exp.reg_A_value < exp.reg_B_value) ? 1'b1 : 1'b0;
-            // if (exp.ltu_flag) exp.pc_4 = exp.pc + exp.offset;
             exp.pc_select  = exp.ltu_flag ? 2'b01 : 2'b00;
           end
 
           3'b111: begin
             exp.alu_opcode = GEU;
             exp.ltu_flag   = (exp.reg_A_value >= exp.reg_B_value) ? 1'b0 : 1'b1;
-            // if (!exp.ltu_flag) exp.pc_4 = exp.pc + exp.offset;
             exp.pc_select  = !exp.ltu_flag ? 2'b01 : 2'b00;
           end
 
         endcase
-        if (exp.pc_select) exp.pc_4 = exp.pc + exp.offset;
+        if (exp.pc_select == 2'b01) exp.pc_4 = exp.pc + exp.offset;
         else exp.pc_4 = exp.pc + 32'd4;
+      end
+      7'h6f: begin
+        exp.alu_select_1 = 1'b0;
+        exp.alu_select_2 = 1'b0;
+        exp.alu_opcode = ADD;
+        exp.offset[31:21] = {11{inst[31]}};
+        exp.offset[20:0] = {inst[31], inst[19:12], inst[20], inst[30:21], 1'b0};
+        exp.A_value = exp.pc;
+        exp.B_value = exp.offset;
+        exp.alu_result = exp.A_value + exp.B_value;
+        exp.reg_write = 1'b1;
+        exp.mem_read = 1'b0;
+        exp.write_from = 2'b10;
+        exp.pc_select = 2'b01;
+        if (exp.pc_select == 2'b01) exp.pc_4 = exp.pc + exp.offset;
+        else exp.pc_4 = exp.pc + 32'd4;
+        if (exp.inst[11:7] != 0) ref_reg[exp.inst[11:7]] = exp.pc + 32'd4;
+        else ref_reg[0] = 0;
+      end
+      7'h67: begin
+        exp.alu_select_1 = 1'b0;
+        exp.alu_select_2 = 1'b0;
+        exp.alu_opcode = ADD;
+        exp.offset[31:12] = {20{inst[31]}};
+        exp.offset[11:0] = {inst[31:20]};
+        exp.reg_A_value = ref_reg[exp.inst[19:15]];
+        exp.mem_read = 1'b0;
+        exp.mem_write = 1'b0;
+        exp.reg_write = 1'b1;
+        exp.pc_select = 2'b10;
+        exp.write_from = 2'b10;
+        exp.pc_4 = (exp.offset + exp.reg_A_value) & ~(32'd1);
+        // else exp.pc_4 = exp.pc + 32'd4;
+        if (exp.inst[11:7] != 0) ref_reg[exp.inst[11:7]] = exp.pc + 32'd4;
+        else ref_reg[0] = 0;
       end
       default: begin
         exp.alu_opcode   = ADD;
@@ -384,13 +524,14 @@ class risc_scr extends uvm_scoreboard;
   endfunction
 
   function void write(data_pkt t);
+    riscv_cg.sample(t);
     rsp.push_back(t);
   endfunction
 
   task run_phase(uvm_phase phase);
     // pc = 0;
-    forever begin
-      if (j == 0) break;
+    repeat (j) begin
+      //       if (j == 0) break;
       wait (rsp.size() > 0) exp = data_pkt::type_id::create("exp");
       iop = data_pkt::type_id::create("iop");
       iop = rsp.pop_front();
@@ -402,7 +543,6 @@ class risc_scr extends uvm_scoreboard;
         predictor(iop.inst);
         #1 compare(iop);
       end
-      j--;
     end
   endtask
 

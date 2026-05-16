@@ -63,7 +63,6 @@ module fetch_block (
       .pc_next(pc_value),
       .pc     (pc)
   );
-
   assign pc_4 = pc_value;
 
 endmodule

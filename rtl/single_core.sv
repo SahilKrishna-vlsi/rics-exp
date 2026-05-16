@@ -1,5 +1,4 @@
 import isa_types_pkg::*;
-`include "/tb/interface.sv"
 logic [31:0] ins_mem[0:1023];  // 4 KB = 1024 words
 logic [31:0] da_mem[0:1023];  // 4 KB
 reg [31:0] register[31:0];  //   assign register[0] = 32'h0;
@@ -65,7 +64,7 @@ module single_core (
       .lt(rc.lt_flag)
   );
 
-  assign rc.write_data = (rc.write_from == 2'b00) ? rc.alu_result : (rc.write_from == 2'b01) ? rc.mem_data   :  (rc.write_from == 2'b10) ? rc.pc_4 : 32'b0;
+  assign rc.write_data = (rc.write_from == 2'b00) ? rc.alu_result : (rc.write_from == 2'b01) ? rc.mem_data   :  (rc.write_from == 2'b10) ? (rc.pc + 32'd4) : 32'b0;
 
   data_mem data_memory (
       .clk       (rc.clk),
@@ -75,6 +74,4 @@ module single_core (
       .write_data(rc.reg_B_value),
       .read_data (rc.mem_data)
   );
-
-
 endmodule

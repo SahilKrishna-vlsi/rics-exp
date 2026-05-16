@@ -21,5 +21,4 @@ class risc_agent extends uvm_agent;
     super.connect_phase(phase);
     dri.seq_item_port.connect(sqr.seq_item_export);
   endfunction
-
 endclass

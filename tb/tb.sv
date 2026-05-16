@@ -1,10 +1,9 @@
-// Code your testbench here
-// or browse Examples
 import uvm_pkg::*;
 import isa_types_pkg::*;
-`include "uvm_macros.svh"
-`include "interface.sv"
 
+`include "uvm_macros.svh"
+logic [31:0] mem[0:1023];
+int load;
 //=============== test bench =============
 module tb;
   bit clk;
@@ -16,21 +15,22 @@ module tb;
   single_core sc (rc_inf);
 
   initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars(0, tb);
-    wait (load == 100) clk = 0;
+    //     $dumpfile("dump.vcd");
+    //     $dumpvars(0, tb);
+    wait (load == 500) clk = 0;
     reset = 1;
     #1 reset = 0;
     #2 reset = 1;
   end
 
-  always #5 clk = ~clk;
+  always #10 clk = ~clk;
 
   initial begin
     uvm_config_db#(virtual risc_intf)::set(null, "*", "rc_inf", rc_inf);
     run_test("risc_test");
     #1000 $finish;
   end
+
   initial begin
     register[0] = 0;
     foreach (da_mem[i]) begin
@@ -43,5 +43,8 @@ module tb;
     end
   end
 
-
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, tb);
+  end
 endmodule

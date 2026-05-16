@@ -1,6 +1,3 @@
-logic [31:0] mem[0:1023];
-// logic [31:0] data_mem[0:1023];
-//======= interface ===============
 interface risc_intf (
     input bit clk,
     reset
@@ -23,5 +20,3 @@ interface risc_intf (
     ins_mem[i] = data;
   endtask
 endinterface
-
-

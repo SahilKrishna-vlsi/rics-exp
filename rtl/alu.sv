@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-import isa_types_pkg::*;
 module alu (
     input operator_t opcode,
     input logic [31:0] A,

@@ -9,14 +9,13 @@ module registers (
     output logic [31:0] read_data1,
     output logic [31:0] read_data2
 );
+
   always_comb begin
     read_data1 = register[read_port1];
     read_data2 = register[read_port2];
     if (read_port1 == 5'b0) read_data1 = 32'b0;
     if (read_port2 == 5'b0) read_data2 = 32'b0;
   end
-  // assign read_data1 = register[read_port1];
-  // assign read_data2 = register[read_port2];
   always_ff @(posedge clock or negedge reset) begin
     if (~reset) begin
       for (int i = 0; i < 32; i++) begin
@@ -25,8 +24,6 @@ module registers (
     end
     if (write_enable && write_port != 5'b0) begin
       if (write_port) register[write_port] <= write_data;
-      // if (write_port == 5'b0) register[write_port] <= 32'b0;
     end
   end
-
 endmodule

@@ -12,9 +12,10 @@ class risc_pkt extends uvm_sequence_item;
   rand logic [ 2:0] func3;  //func3
   rand logic [ 6:0] func7;  //func7
 
-  // For Immediate/Store type instruction
+  // For Immediate/store type instruction
   rand logic [11:0] i_imm;
-  // For branch type instruction
+
+  // For Branch type instruction
   rand logic [12:0] b_imm;
 
   // For Unconditional jump/ Jump type instruction
@@ -29,15 +30,63 @@ class risc_pkt extends uvm_sequence_item;
 	7'b1101111 => 	Jump type JAL
 	7'b1100111 => 	JUmp type JALR
 	**/
-  constraint c_i_mm {i_imm < 100;}
+  constraint c_opcode {
+    opcode dist {
+      7'h33 := 40,
+      7'h13 := 40,
+      7'h3  := 25,
+      7'h23 := 35,
+      7'h63 := 20,
+      7'h6f := 20,
+      7'h67 := 20
+    };
+  }
+  //   constraint c_opcode {opcode ==7'h6f;}
+  constraint c_i_mm {
+    i_imm >= 35;
+    i_imm < 100;
+    i_imm != 32'b0;
+    i_imm % 4 == 0;
+  }
   constraint c_b_mm {
-    b_imm < 40;
+    b_imm > 45;
+    b_imm < 100;
     b_imm % 4 == 0;
     b_imm != 32'b0;
+  }
+  constraint c_u_mm {
+    u_imm > 30;
+    u_imm < 100;
+    u_imm % 4 == 0;
+    u_imm != 32'b0;
   }
   constraint c_func3 {
     if (opcode == 7'h63) {
       func3 inside {3'b0, 3'b1, 3'b100, 3'b101, 3'b110, 3'b111};
+    }
+  }
+
+  constraint c_func {
+    if (opcode == 7'h33) {
+      func3 dist {
+        0 := 50,
+        1 := 50,
+        2 := 45,
+        3 := 60,
+        4 := 30,
+        5 := 20,
+        6 := 60,
+        7 := 45
+      };
+      func7 dist {
+        0 := 50,
+        1 := 50
+      };
+    }
+  }
+  constraint c_func1 {
+    if (opcode == 7'h13) {
+      func3 inside {[0 : 7]};
     }
   }
 
@@ -50,7 +99,6 @@ class risc_pkt extends uvm_sequence_item;
     `uvm_field_int(func7, UVM_ALL_ON)
     `uvm_field_int(i_imm, UVM_ALL_ON)
     `uvm_field_int(u_imm, UVM_ALL_ON)
-    `uvm_field_int(b_imm, UVM_ALL_ON)
   `uvm_object_utils_end
 
 
