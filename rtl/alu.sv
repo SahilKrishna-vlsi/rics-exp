@@ -1,9 +1,9 @@
 module alu (
     input operator_t opcode,
-    input logic [31:0] A,
-    input logic [31:0] B,
+    input logic signed [31:0] A,
+    input logic signed [31:0] B,
 
-    output logic [31:0] result,
+    output logic signed [31:0] result,
     output logic zeros,
     output logic ltu,
     output logic lt

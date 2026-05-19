@@ -36,14 +36,14 @@ module alu_io_selections (
         alu_io_1 = 1'b1;
         alu_io_2 = 1'b1;
         case (inst[14:12])
-          3'b000: alu_opcode = (inst[31:25] == 7'b0000000) ? ADD : SUB;
-          3'b001: alu_opcode = (inst[31:25] == 7'b0000000) ? SLL : ADD;
-          3'b010: alu_opcode = (inst[31:25] == 7'b0000000) ? SLT : ADD;
-          3'b011: alu_opcode = (inst[31:25] == 7'b0000000) ? SLTU : ADD;
-          3'b100: alu_opcode = (inst[31:25] == 7'b0000000) ? XOR : ADD;
-          3'b101: alu_opcode = (inst[31:25] == 7'b0000000) ? SRL : SRA;
-          3'b110: alu_opcode = (inst[31:25] == 7'b0000000) ? OR : ADD;
-          3'b111: alu_opcode = (inst[31:25] == 7'b0000000) ? AND : ADD;
+          3'b000: alu_opcode = (inst[30]) ? SUB : ADD;
+          3'b001: alu_opcode = SLL;
+          3'b010: alu_opcode = SLT;
+          3'b011: alu_opcode = SLTU;
+          3'b100: alu_opcode = XOR;
+          3'b101: alu_opcode = (inst[30]) ? SRA : SRL;
+          3'b110: alu_opcode = OR;
+          3'b111: alu_opcode = AND;
         endcase
 
       end
@@ -92,8 +92,6 @@ module alu_io_selections (
           3'b110: alu_opcode = LTU;
 
           3'b111: alu_opcode = GEU;
-
-          default: alu_opcode = ADD;
         endcase
       end
 

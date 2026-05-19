@@ -1,18 +1,28 @@
+`include "isa_types_pkg.sv"
 import isa_types_pkg::*;
 logic [31:0] ins_mem[0:1023];  // 4 KB = 1024 words
-logic [31:0] da_mem[0:1023];  // 4 KB
-reg [31:0] register[31:0];  //   assign register[0] = 32'h0;
+logic signed [31:0] da_mem[0:1023];  // 4 KB
+reg signed [31:0] register[31:0];  //   assign register[0] = 32'h0;
+`include "interface.sv"
+`include "alu.sv"
+`include "control_unit.sv"
+`include "data_mem.sv"
+`include "fetch_block.sv"
+`include "imm_generator.sv"
+`include "inst_mem.sv"
+`include "registers.sv"
+
 module single_core (
     risc_intf rc
 );
   fetch_block Fetch (
-      .clock    (rc.clk),
-      .reset    (rc.reset),
-      .offset   (rc.offset),
-      .reg_val  (rc.reg_A_value),
-      .PC_select(rc.pc_select),
-      .pc_4     (rc.pc_4),
-      .pc       (rc.pc)
+      .clock        (rc.clk),
+      .reset        (rc.reset),
+      .offset       (rc.offset),
+      .reg_val      (rc.reg_A_value),
+      .PC_select    (rc.pc_select),
+      .pc_next_value(rc.pc_next_value),
+      .pc           (rc.pc)
   );
   inst_mem instructions (
       .PC  (rc.pc),

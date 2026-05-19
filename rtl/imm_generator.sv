@@ -1,6 +1,6 @@
 module imm_generator (
-    input  logic [31:0] inst,
-    output logic [31:0] imm_result
+    input logic [31:0] inst,
+    output logic signed [31:0] imm_result
 );
   /***
 	Instruction type
@@ -22,27 +22,27 @@ module imm_generator (
       end
 
       7'b0000011: begin
-        imm_result[31:12] = {20{inst[31]}};
+        imm_result[31:12] = {20{1'b0}};
         imm_result[11:0]  = inst[31:20];
       end
 
       7'b0100011: begin  //strore
-        imm_result[31:12] = {20{inst[31]}};
+        imm_result[31:12] = {20{1'b0}};
         imm_result[11:0]  = {inst[31:25], inst[11:7]};
       end
 
       7'b1100011: begin
-        imm_result[31:13] = {19{inst[31]}};
+        imm_result[31:13] = {19{1'b0}};
         imm_result[12:0]  = {inst[31], inst[7], inst[30:25], inst[11:8], 1'b0};
       end
 
       7'b1101111: begin
-        imm_result[31:21] = {11{inst[31]}};
+        imm_result[31:21] = {11{1'b0}};
         imm_result[20:0]  = {inst[31], inst[19:12], inst[20], inst[30:21], 1'b0};
       end
 
       7'b1100111: begin
-        imm_result[31:12] = {20{inst[31]}};
+        imm_result[31:12] = {20{1'b0}};
         imm_result[11:0]  = inst[31:20];
 
       end

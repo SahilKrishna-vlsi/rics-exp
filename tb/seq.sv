@@ -9,8 +9,9 @@ class risc_sequence extends uvm_sequence #(risc_pkt);
   task body();
     risc_pkt pkt;
     repeat (n) begin
-      i   = i + 1;
+      i = i + 1;
       pkt = risc_pkt::type_id::create("pkt");
+      pkt.i = i;
       start_item(pkt);
       pkt.randomize();  // {opcode inside {7'h3,7'h13,7'h23,7'h33};}
       finish_item(pkt);

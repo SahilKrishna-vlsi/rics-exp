@@ -2,12 +2,12 @@ module registers (
     input logic clock,
     input logic reset,
     input logic [4:0] write_port,
-    input logic [31:0] write_data,
+    input logic signed [31:0] write_data,
     input logic write_enable,
     input logic [4:0] read_port1,
     input logic [4:0] read_port2,
-    output logic [31:0] read_data1,
-    output logic [31:0] read_data2
+    output logic signed [31:0] read_data1,
+    output logic signed [31:0] read_data2
 );
 
   always_comb begin

@@ -33,13 +33,13 @@ module mux41_pc (
 endmodule
 
 module fetch_block (
-    input  logic        clock,
-    input  logic        reset,
-    input  logic [31:0] offset,
-    input  logic [31:0] reg_val,
-    input  logic [ 1:0] PC_select,
-    output logic [31:0] pc_4,
-    output logic [31:0] pc
+    input  logic               clock,
+    input  logic               reset,
+    input  logic signed [31:0] offset,
+    input  logic signed [31:0] reg_val,
+    input  logic signed [ 1:0] PC_select,
+    output logic        [31:0] pc_next_value,
+    output logic        [31:0] pc
 );
   logic [31:0] pc_plus4;
   assign pc_plus4 = pc + 32'd4;
@@ -63,6 +63,13 @@ module fetch_block (
       .pc_next(pc_value),
       .pc     (pc)
   );
-  assign pc_4 = pc_value;
+  always_comb begin
+    if (pc_value > 32'h00000FFC) begin
+      $display("PC OUT OF RANGE");
+      $stop;
+    end
+  end
+
+  assign pc_next_value = pc_value;
 
 endmodule

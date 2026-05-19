@@ -1,9 +1,19 @@
 import uvm_pkg::*;
 import isa_types_pkg::*;
-
-`include "uvm_macros.svh"
-logic [31:0] mem[0:1023];
+logic signed [31:0] mem[0:1023];
 int load;
+`include "uvm_macros.svh"
+`include "interface.sv"
+`include "data_pkt.sv"
+`include "seqr.sv"
+`include "seq.sv"
+`include "mon.sv"
+`include "driver.sv"
+`include "scr.sv"
+`include "ag.sv"
+`include "env.sv"
+`include "test.sv"
+
 //=============== test bench =============
 module tb;
   bit clk;
@@ -17,7 +27,7 @@ module tb;
   initial begin
     //     $dumpfile("dump.vcd");
     //     $dumpvars(0, tb);
-    wait (load == 500) clk = 0;
+    wait (load == 1023) clk = 0;
     reset = 1;
     #1 reset = 0;
     #2 reset = 1;

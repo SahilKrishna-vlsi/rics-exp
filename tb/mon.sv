@@ -32,7 +32,7 @@ class risc_monitor extends uvm_monitor;
         pkt.lt_flag = rc_inf.lt_flag;
         pkt.ltu_flag = rc_inf.ltu_flag;
         pkt.alu_result = rc_inf.alu_result;
-        pkt.pc_4 = rc_inf.pc_4;
+        pkt.pc_next_value = rc_inf.pc_next_value;
         pkt.reg_write = rc_inf.reg_write;
         pkt.mem_read = rc_inf.mem_read;
         pkt.mem_write = rc_inf.mem_write;
