@@ -1,6 +1,6 @@
 class risc_sequence extends uvm_sequence #(risc_pkt);
   `uvm_object_utils(risc_sequence)
-  int n = 499;
+  int n = 1023;
   int i = 0;
   function new(string name = "risc_sequence");
     super.new(name);

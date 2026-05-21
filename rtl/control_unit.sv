@@ -149,6 +149,7 @@ module control_outputs (
 
       7'b0010011: begin
         reg_write = 1'b1;
+
       end
 
       7'b0000011: begin

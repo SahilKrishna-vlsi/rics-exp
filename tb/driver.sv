@@ -26,13 +26,16 @@ class risc_driver extends uvm_driver #(risc_pkt);
 
   task drive(risc_pkt pkt);
     if (pkt != null) begin
+      //       `uvm_info("cont", $sformatf("i:%h b:%h u:%h B:%h A:%h,opocde: %h", pkt.i_imm, pkt.b_imm,
+      //                                   pkt.u_imm, pkt.B, pkt.A, pkt.opcode), UVM_LOW)
+      correct_jump(pkt, i);
       case (pkt.opcode)
         7'h3: mem[i] = {pkt.i_imm, pkt.A, pkt.func3, pkt.rd, pkt.opcode};  //load
         7'h13: mem[i] = {pkt.i_imm, pkt.A, pkt.func3, pkt.rd, pkt.opcode};  //immediate
         7'h23:
         mem[i] = {pkt.i_imm[11:5], pkt.B, pkt.A, pkt.func3, pkt.i_imm[4:0], pkt.opcode};  //store
         7'h33: mem[i] = {pkt.func7, pkt.B, pkt.A, pkt.func3, pkt.rd, pkt.opcode};  //register
-        8'h63: begin
+        7'h63: begin
           mem[i] = {
             pkt.b_imm[12],
             pkt.b_imm[10:5],
@@ -44,12 +47,12 @@ class risc_driver extends uvm_driver #(risc_pkt);
             pkt.opcode
           };  //branch
         end
-        8'h6F: begin
+        7'h6F: begin
           mem[i] = {
             pkt.u_imm[20], pkt.u_imm[10:1], pkt.u_imm[11], pkt.u_imm[19:12], pkt.rd, pkt.opcode
           };  //jal								
         end
-        8'h67: mem[i] = {pkt.i_imm, pkt.A, pkt.func3, pkt.rd, pkt.opcode};  //jalr					
+        7'h67: mem[i] = {pkt.i_imm, pkt.A, pkt.func3, pkt.rd, pkt.opcode};  //jalr					
       endcase
       //       if(pkt.opcode==7'h3 || pkt.opcode ==7'h23) begin
       //       if(pkt.A == 5'b0)register[pkt.A] = 32'b0;
@@ -62,4 +65,25 @@ class risc_driver extends uvm_driver #(risc_pkt);
       load++;
     end
   endtask
+
+
+  task correct_jump(risc_pkt pkt, int i);
+    case (pkt.opcode)
+      //       7'h63: // branch
+      //       begin
+      //         if (i * 4 > pkt.b_imm)
+      //         pkt.b_imm = i * 4 + pkt.b_imm;
+      //       end
+      7'h67: // jalr
+      begin
+        if (i * 4 > pkt.i_imm) pkt.i_imm = i * 4 + pkt.i_imm;
+      end
+      //       7'h6f: // jal
+      //       begin
+      //         if (i * 4 > pkt.u_imm)
+      //         pkt.u_imm = i * 4 + pkt.u_imm;
+      //       end
+    endcase
+  endtask
+
 endclass

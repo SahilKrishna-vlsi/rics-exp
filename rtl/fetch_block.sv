@@ -69,12 +69,14 @@ module fetch_block (
   always @(posedge clock) begin
     if (pc_value > 32'h00000FFC) begin
       //       $display("%t",$time);
-      //       $display("nv %d",pc_next_value);
-      //       $display("pc sele%d",PC_select);
-      //       $display("pc+4 %d",pc_plus4);
-      //       $display("pc+offse%d",pc_imm);
-      //       $display("pc+reg%d",pc_reg1);
-      //       $display("current pc%d",pc);
+      $display("nv %d", pc_next_value);
+      $display("pc sele%d", PC_select);
+      $display("pc+4 %d", pc_plus4);
+      $display("pc+offse%d", pc_imm);
+      $display("pc+reg%d", pc_reg1);
+      $display("offset%d", offset);
+      $display("reg%d", signed'(reg_val));
+      $display("current pc %d", pc);
       $display("PC OUT OF RANGE");
       $stop;
       //     end else begin

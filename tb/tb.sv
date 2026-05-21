@@ -29,7 +29,7 @@ module tb;
     //     load =0;
     //     $dumpfile("dump.vcd");
     //     $dumpvars(0, tb);
-    wait (load == 499) clk = 0;
+    wait (load == 1023) clk = 0;
     reset = 1;
   end
 

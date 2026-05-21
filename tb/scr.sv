@@ -8,7 +8,7 @@ class risc_scr extends uvm_scoreboard;
   int pass_count;
   int fail_count;
   bit pass_fail;
-  int j = 499;
+  int j = 1023;
   logic [31:0] pc;
   logic [31:0] ref_mem[0:1023];
   reg [31:0] ref_reg[31:0];
@@ -111,18 +111,23 @@ class risc_scr extends uvm_scoreboard;
         if (exp.alu_opcode.name == SLT || exp.alu_opcode.name == SLTU) begin
           if (exp.lt_flag == t.lt_flag && t.alu_opcode.name == SLT) begin
             pass_count++;
-            `uvm_info("SB_PASS", "R-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("R-Type Instruction passed inst => %h", exp.inst),
+                      UVM_LOW)
             pass_fail = 1'b1;
-            // //`uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+            // //`uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+            `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           end else if (exp.ltu_flag == t.ltu_flag && t.alu_opcode.name == SLTU) begin
             pass_count++;
-            `uvm_info("SB_PASS", "R-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("R-Type Instruction passed inst => %h", exp.inst),
+                      UVM_LOW)
             pass_fail = 1'b1;
-            // //`uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+            // //`uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+            `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           end else begin
             fail_count++;
             `uvm_info("SB_FAIL", "R-Type Instruction failed", UVM_LOW)
-            `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+            `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+            `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
             `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
             `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
             `uvm_info("SB_pri", $sformatf("exp.lt_flag %h", exp.lt_flag), UVM_LOW)
@@ -133,12 +138,13 @@ class risc_scr extends uvm_scoreboard;
         end
         else if(exp.alu_result == t.alu_result && exp.alu_opcode == t.alu_opcode && ref_reg[exp.inst[11:7]] == register[t.inst[11:7]]) begin
           pass_count++;
-          `uvm_info("SB_PASS", "R-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("R-Type Instruction Passed inst => %h", exp.inst), UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "R-Type Instruction failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.alu_result %h", exp.alu_result), UVM_LOW)
@@ -156,16 +162,19 @@ class risc_scr extends uvm_scoreboard;
         if (exp.alu_opcode.name == SLT || exp.alu_opcode.name == SLTU) begin
           if (exp.lt_flag == t.lt_flag && t.alu_opcode.name == SLT) begin
             pass_count++;
-            `uvm_info("SB_PASS", "I-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("I-Type Instruction Passed inst => %h", exp.inst),
+                      UVM_LOW)
             pass_fail = 1'b1;
           end else if (exp.ltu_flag == t.ltu_flag && t.alu_opcode.name == SLTU) begin
             pass_count++;
-            `uvm_info("SB_PASS", "I-Type Instruction passed", UVM_LOW)
+            `uvm_info("SB_PASS", $sformatf("I-Type Instruction Passed inst => %h", exp.inst),
+                      UVM_LOW)
             pass_fail = 1'b1;
           end else begin
             fail_count++;
             `uvm_info("SB_FAIL", "I-Type Instruction failed", UVM_LOW)
-            `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+            `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+            `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
             `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
             `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
             `uvm_info("SB_pri", $sformatf("exp.lt_flag %h", exp.lt_flag), UVM_LOW)
@@ -176,12 +185,13 @@ class risc_scr extends uvm_scoreboard;
         end  
       else if(exp.alu_result == t.alu_result && exp.alu_opcode == t.alu_opcode && ref_reg[exp.inst[11:7]] == register[t.inst[11:7]]) begin
           pass_count++;
-          `uvm_info("SB_PASS", "I-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("I-Type Instruction Passed inst => %h", exp.inst), UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "I-Type Instruction failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.alu_result %h", exp.alu_result), UVM_LOW)
@@ -199,12 +209,13 @@ class risc_scr extends uvm_scoreboard;
       7'b0000011: begin
         if (exp.write_data == t.write_data && exp.alu_opcode == t.alu_opcode && da_mem[t.alu_result[31:2]]==ref_mem[exp.alu_result[31:2]]) begin
           pass_count++;
-          `uvm_info("SB_PASS", "L-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("L-Type Instruction Passed inst => %h", exp.inst), UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "L-Type Instruction failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.write_data %h", exp.write_data), UVM_LOW)
@@ -230,12 +241,13 @@ class risc_scr extends uvm_scoreboard;
       7'b0100011: begin
         if (exp.write_data == t.write_data && da_mem[t.alu_result[31:2]] == ref_mem[exp.alu_result[31:2]]) begin
           pass_count++;
-          `uvm_info("SB_PASS", "S-Type Instruction passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("S-Type Instruction Passed inst => %h", exp.inst), UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "S-Type Instruction failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.write_data %h", exp.write_data), UVM_LOW)
@@ -257,12 +269,13 @@ class risc_scr extends uvm_scoreboard;
       7'h63: begin
         if (exp.pc_select == t.pc_select && exp.pc_next_value == t.pc_next_value) begin
           pass_count++;
-          `uvm_info("SB_PASS", "B-Type instruction Passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("B-Type Instruction Passed inst => %h", exp.inst), UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "B-Type Instruction Failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.pc_select %d", t.pc_select), UVM_LOW)
@@ -274,12 +287,14 @@ class risc_scr extends uvm_scoreboard;
       7'h67: begin
         if (exp.pc_select == t.pc_select && exp.pc_next_value == t.pc_next_value && ref_reg[exp.inst[11:7]]==register[t.inst[11:7]]) begin
           pass_count++;
-          `uvm_info("SB_PASS", "JALR-Type instruction Passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("JARL-Type Instruction Passed inst => %h", exp.inst),
+                    UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "JALR-Type Instruction Failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.pc_select %d", t.pc_select), UVM_LOW)
@@ -295,12 +310,14 @@ class risc_scr extends uvm_scoreboard;
       7'h6f: begin
         if (exp.pc_select == t.pc_select && exp.pc_next_value == t.pc_next_value && ref_reg[exp.inst[11:7]]==register[t.inst[11:7]]) begin
           pass_count++;
-          `uvm_info("SB_PASS", "JAL-Type instruction Passed", UVM_LOW)
+          `uvm_info("SB_PASS", $sformatf("JAL-Type Instruction Passed inst => %h", exp.inst),
+                    UVM_LOW)
           pass_fail = 1'b1;
         end else begin
           fail_count++;
           `uvm_info("SB_FAIL", "JAL-Type Instruction Failed", UVM_LOW)
-          `uvm_info("SB_PASS", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("t pc %h", t.pc), UVM_LOW)
+          `uvm_info("SB_FAIL", $sformatf("exp pc %h", exp.pc), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("exp.inst %h", exp.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.inst %h", t.inst), UVM_LOW)
           `uvm_info("SB_pri", $sformatf("t.pc_select %d", t.pc_select), UVM_LOW)
@@ -539,21 +556,26 @@ class risc_scr extends uvm_scoreboard;
       wait (rsp.size() > 0) exp = data_pkt::type_id::create("exp");
       iop = data_pkt::type_id::create("iop");
       iop = rsp.pop_front();
-      // `uvm_info("cont", $sformatf("exp.reset=%0d t.reset=%0d", exp.reset, iop.reset), UVM_LOW)
+      `uvm_info("cont", $sformatf("exp.pc=%0d", pc), UVM_LOW)
       if (!iop.reset) begin
         `uvm_info("cont", "Need to compare reg and PC to zeros here", UVM_LOW)
       end else begin
         exp.pc = pc;
         exp.inst = mem[exp.pc/4];
         visited[pc/4] = visited[pc/4] + 1;
-        `uvm_info("cont", $sformatf(" before predicions exp.inst=%0h t.inst=%0h", exp.inst, iop.inst
-                  ), UVM_LOW)
+        // `uvm_info("cont", $sformatf(" before predicions exp.inst=%0h t.inst=%0h", exp.inst, iop.inst
+        // ), UVM_LOW)
         predictor(exp.inst);
         #1 compare(iop);
         if (pass_fail) begin
           if (exp.pc_select == 2'b01) pc = pc + exp.offset;
           else if (exp.pc_select == 2'b10) pc = exp.reg_A_value + exp.offset;
           else pc = pc + 32'd4;
+          if (pass_count + fail_count >= 1023 || pc >= 4092) begin
+            `uvm_info("SB_pri", "all instructions are either covered or pc is longer valid",
+                      UVM_LOW)
+            phase.drop_objection(this);
+          end
         end else phase.drop_objection(this);
         if (visited[exp.pc/4] >= 2) begin
           `uvm_info("SB_pri", $sformatf("%h instruction is possiblly in loop", exp.inst), UVM_LOW)

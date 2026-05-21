@@ -39,21 +39,41 @@ class risc_pkt extends uvm_sequence_item;
       7'h13 := 60,
       7'h3  := 50,
       7'h23 := 40,
-      7'h63 := 1,
-      7'h67 := 1,
-      7'h6f := 1
+      7'h63 := 10,
+      7'h67 := 10,
+      7'h6f := 10
     };
   }
   // constraint c_opcode {opcode == 7'h33;}
 
-
+  constraint alu_opcode {
+    if (opcode == 7'h33 || opcode == 7'h13) {
+      if (func3 == 3'b000 && opcode == 7'h33) func7 == 7'b0100000;
+      if (func3 == 3'b101)
+      func7 dist {
+        7'b0100000 := 60,
+        7'b0 := 20
+      };
+    } else {
+      if (opcode == 7'h63) {
+        func3 dist {
+          0 := 10,
+          1 := 10,
+          4 := 10,
+          5 := 10,
+          6 := 10,
+          7 := 10
+        };
+      }
+    }
+  }
 
   constraint c_imm {
 
     // general immediate ranges
     i_imm inside {[-64 : 64]};
-    b_imm inside {[-64 : 64]};
-    u_imm inside {[-64 : 64]};
+    b_imm == 4;
+    u_imm == 4;
   }
 
 
@@ -62,7 +82,9 @@ class risc_pkt extends uvm_sequence_item;
     // branch/jump alignment only
     b_imm % 4 == 0;
     u_imm % 4 == 0;
+    i_imm % 4 == 0;
 
+    i_imm != 0;
     b_imm != 0;
     u_imm != 0;
   }
@@ -113,13 +135,15 @@ class risc_pkt extends uvm_sequence_item;
   constraint c_branch_jump {
 
     // branch target
+    // b_imm inside {}
+    // u_imm == 20'b100;
+    if (opcode == 7'h67) {A inside {[1 : 8]};}
+    // if (opcode == 7'h63) {
+    //   i * 4 + b_imm >= 0;
+    //   i * 4 + b_imm <= 4092;
+    // }
 
-    if (opcode == 7'h63) {
-      i * 4 + b_imm >= 0;
-      i * 4 + b_imm <= 4092;
-    }
-
-    // JAL/JALR target
+    // // JAL/JALR target
 
     if (opcode == 7'h6f || opcode == 7'h67) {
       i * 4 + u_imm >= 0;
