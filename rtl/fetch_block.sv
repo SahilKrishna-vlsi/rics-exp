@@ -37,7 +37,7 @@ module fetch_block (
     input  logic               reset,
     input  logic signed [31:0] offset,
     input  logic signed [31:0] reg_val,
-    input  logic signed [ 1:0] PC_select,
+    input  logic        [ 1:0] PC_select,
     output logic        [31:0] pc_next_value,
     output logic        [31:0] pc
 );
@@ -63,13 +63,29 @@ module fetch_block (
       .pc_next(pc_value),
       .pc     (pc)
   );
-  always_comb begin
-    if (pc_value > 32'h00000FFC) begin
-      $display("PC OUT OF RANGE");
-      $stop;
-    end
-  end
+
 
   assign pc_next_value = pc_value;
+  always @(posedge clock) begin
+    if (pc_value > 32'h00000FFC) begin
+      //       $display("%t",$time);
+      //       $display("nv %d",pc_next_value);
+      //       $display("pc sele%d",PC_select);
+      //       $display("pc+4 %d",pc_plus4);
+      //       $display("pc+offse%d",pc_imm);
+      //       $display("pc+reg%d",pc_reg1);
+      //       $display("current pc%d",pc);
+      $display("PC OUT OF RANGE");
+      $stop;
+      //     end else begin
+      //       $display("%t",$time);
+      //       $display("nv %d",pc_next_value);
+      //       $display("pc sele%d",PC_select);
+      //       $display("pc+4 %d",pc_plus4);
+      //       $display("pc+offse%d",pc_imm);
+      //       $display("pc+reg%d",pc_reg1);
+      //       $display("current pc%d",pc);
+    end
+  end
 
 endmodule

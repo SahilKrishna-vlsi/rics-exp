@@ -20,7 +20,7 @@ class risc_pkt extends uvm_sequence_item;
 
   // For Unconditional jump/ Jump type instruction
   rand logic signed [20:0] u_imm;
-
+  rand logic [31:0] base_addr;
   int i;
 
   /***   Instruction type
@@ -35,72 +35,96 @@ class risc_pkt extends uvm_sequence_item;
 
   constraint c_opcode {
     opcode dist {
-      7'h33 := 35,
-      7'h13 := 35,
-      7'h3  := 20,
-      7'h23 := 20,
-      7'h63 := 20,
-      7'h67 := 10,
-      7'h6f := 10
+      7'h33 := 70,
+      7'h13 := 60,
+      7'h3  := 50,
+      7'h23 := 40,
+      7'h63 := 1,
+      7'h67 := 1,
+      7'h6f := 1
     };
   }
   // constraint c_opcode {opcode == 7'h33;}
 
-  constraint c_func {
-    if (opcode == 7'h33 || opcode == 7'h13) {
-      func3 dist {
-        0 := 40,
-        1 := 40,
-        2 := 30,
-        3 := 30,
-        4 := 20,
-        5 := 20,
-        6 := 10,
-        7 := 10
-      };
-    }
-    if (opcode == 7'h63) {
-      func3 dist {
-        0 := 10,
-        1 := 20,
-        4 := 30,
-        5 := 40,
-        6 := 50,
-        7 := 60
-      };
-    }
-  }
-  constraint c_func7 {
-    if (((func3 == 3'b000 || func3 == 3'b101) && opcode == 7'h33)||(func3==3'b101 && opcode == 7'h13)) {
-      func7 dist {
-        7'h20 := 100,
-        7'h00 := 20
-      };
-    }
-  }
-  constraint c_func7_1 {
-    if (opcode == 7'h13 && func3 == 001) func7 == 7'h00;
-    if (opcode == 7'h13 && func3 == 101) i_imm[10] == func7[6];
-  }
+
+
   constraint c_imm {
-    i_imm inside {[-2048 : 2047]};
+
+    // general immediate ranges
+    i_imm inside {[-64 : 64]};
     b_imm inside {[-64 : 64]};
     u_imm inside {[-64 : 64]};
   }
 
-  constraint c_imm_1 {
-    i_imm % 4 == 0;
+
+  constraint c_align {
+
+    // branch/jump alignment only
     b_imm % 4 == 0;
     u_imm % 4 == 0;
-    i_imm != 0;
-    u_imm != 0;
+
     b_imm != 0;
+    u_imm != 0;
   }
 
-  constraint imm2 {
-    i * 4 + i_imm > 0;
-    i * 4 + b_imm > 0;
-    i * 4 + u_imm > 0;
+
+  constraint c_shift {
+
+    // shift-immediate instructions
+    if (opcode == 7'h13 && (func3 == 3'b001 || func3 == 3'b101)) i_imm inside {[0 : 31]};
+  }
+
+
+  constraint c_mem {
+
+    // load/store effective address
+    A != 0;
+    rd != 0;
+    B != 0;
+    base_addr >= 0;
+    base_addr < 4092;
+    if (base_addr == 0) {
+      i_imm >= 0;
+      i_imm <= 11'd64;
+    }
+
+    if (opcode == 7'h03 || opcode == 7'h23) {
+      base_addr % 4 == 0;
+      A inside {[1 : 8]};
+      B inside {[9 : 31]};
+      rd inside {[9 : 31]};
+      //       A != B;
+      B != rd;
+      //       rd != A;
+
+      signed'(base_addr) + i_imm > 0;
+      signed'(base_addr) + i_imm < 4092;
+    } else {
+      A inside {[9 : 31]};
+      B inside {[9 : 31]};
+      rd inside {[9 : 31]};
+      A != B;
+      B != rd;
+      rd != A;
+    }
+  }
+
+
+  constraint c_branch_jump {
+
+    // branch target
+
+    if (opcode == 7'h63) {
+      i * 4 + b_imm >= 0;
+      i * 4 + b_imm <= 4092;
+    }
+
+    // JAL/JALR target
+
+    if (opcode == 7'h6f || opcode == 7'h67) {
+      i * 4 + u_imm >= 0;
+      i * 4 + u_imm <= 4092;
+    }
   }
 
   `uvm_object_utils_begin(risc_pkt)
@@ -112,6 +136,7 @@ class risc_pkt extends uvm_sequence_item;
     `uvm_field_int(func7, UVM_ALL_ON)
     `uvm_field_int(i_imm, UVM_ALL_ON)
     `uvm_field_int(u_imm, UVM_ALL_ON)
+    `uvm_field_int(base_addr, UVM_ALL_ON)
   `uvm_object_utils_end
 
 

@@ -15,15 +15,24 @@ module registers (
     read_data2 = register[read_port2];
     if (read_port1 == 5'b0) read_data1 = 32'b0;
     if (read_port2 == 5'b0) read_data2 = 32'b0;
+    // //     $dispaly("time %0t",$time);
+    //     $display("read 2 i=%0d register[i]=%0h", read_port2, register[read_port2]);
+    //     $display("read 1 i=%0d register[i]=%0h", read_port1, register[read_port1]);
   end
+
   always_ff @(posedge clock or negedge reset) begin
     if (~reset) begin
       for (int i = 0; i < 32; i++) begin
         register[i] <= 32'b0;
       end
-    end
-    if (write_enable && write_port != 5'b0) begin
+    end else if (write_enable && write_port != 5'b0) begin
       if (write_port) register[write_port] <= write_data;
     end
   end
+  //   always@(posedge clock) begin
+  //     foreach (register[i]) begin
+  //           //       r/ef_reg[i] = register[i];
+  //       $display("i=%0d register[i]=%0h", i, register[i]);
+  //         end
+  //   end
 endmodule

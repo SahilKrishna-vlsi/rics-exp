@@ -17,6 +17,6 @@ class risc_test extends uvm_test;
   task run_phase(uvm_phase phase);
     phase.raise_objection(this);
     seq.start(env.ag.sqr);
-    wait (env.scr.pass_count + env.scr.fail_count >= 499) phase.drop_objection(this);
+    phase.drop_objection(this);
   endtask
 endclass

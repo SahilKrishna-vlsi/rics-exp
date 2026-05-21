@@ -59,7 +59,6 @@ module single_core (
       .read_data2  (rc.reg_B_value)
   );
 
-
   assign rc.A_value = rc.alu_select_1 ? rc.reg_A_value : rc.pc;
   assign rc.B_value = rc.alu_select_2 ? rc.reg_B_value : rc.offset;
 

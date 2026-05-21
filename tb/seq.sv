@@ -1,6 +1,6 @@
 class risc_sequence extends uvm_sequence #(risc_pkt);
   `uvm_object_utils(risc_sequence)
-  int n = 500;
+  int n = 499;
   int i = 0;
   function new(string name = "risc_sequence");
     super.new(name);
@@ -9,12 +9,12 @@ class risc_sequence extends uvm_sequence #(risc_pkt);
   task body();
     risc_pkt pkt;
     repeat (n) begin
-      i = i + 1;
-      pkt = risc_pkt::type_id::create("pkt");
+      pkt   = risc_pkt::type_id::create("pkt");
       pkt.i = i;
       start_item(pkt);
-      pkt.randomize();  // {opcode inside {7'h3,7'h13,7'h23,7'h33};}
+      pkt.randomize();
       finish_item(pkt);
+      i = i + 1;
     end
   endtask
 endclass

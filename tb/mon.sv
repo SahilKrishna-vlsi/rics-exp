@@ -20,6 +20,7 @@ class risc_monitor extends uvm_monitor;
     data_pkt pkt;
     forever
       @(posedge rc_inf.clk) begin
+        #0;
         pkt = data_pkt::type_id::create("pkt");
         pkt.pc = rc_inf.pc;
         pkt.inst = rc_inf.inst;

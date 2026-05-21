@@ -51,6 +51,12 @@ class risc_driver extends uvm_driver #(risc_pkt);
         end
         8'h67: mem[i] = {pkt.i_imm, pkt.A, pkt.func3, pkt.rd, pkt.opcode};  //jalr					
       endcase
+      //       if(pkt.opcode==7'h3 || pkt.opcode ==7'h23) begin
+      //       if(pkt.A == 5'b0)register[pkt.A] = 32'b0;
+      //       else 	register[pkt.A] = pkt.base_addr;
+      //         `uvm_info("cont",$sformatf("base=%0d A=%0d reg=%0dimm=%0d result =%0d",pkt.base_addr,pkt.A,                                 register[pkt.A],pkt.i_imm,register[pkt.A] + pkt.i_imm),UVM_LOW)
+
+      //       end
       rc_inf.load_instruction(i, mem[i]);
       i = i + 1;
       load++;
