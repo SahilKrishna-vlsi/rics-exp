@@ -581,6 +581,7 @@ class risc_scr extends uvm_scoreboard;
           `uvm_info("SB_pri", $sformatf("%h instruction is possiblly in loop", exp.inst), UVM_LOW)
           phase.drop_objection(this);
         end
+
       end
     end
     phase.raise_objection(this);
